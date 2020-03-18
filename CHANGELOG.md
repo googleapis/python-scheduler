@@ -4,6 +4,17 @@
 
 [1]: https://pypi.org/project/google-cloud-scheduler/#history
 
+## [1.3.0](https://www.github.com/googleapis/python-scheduler/compare/v1.2.1...v1.3.0) (2020-03-18)
+
+
+### ⚠ BREAKING CHANGES
+
+* **scheduler:** remove `project_path` method, update docstrings (via synth) (#9522)
+
+### Bug Fixes
+
+* **scheduler:** remove `project_path` method, update docstrings (via synth) ([#9522](https://www.github.com/googleapis/python-scheduler/issues/9522)) ([36c611b](https://www.github.com/googleapis/python-scheduler/commit/36c611bdd1504918ecec39f7846c533b1e7b181c))
+
 ## 1.2.1
 
 08-12-2019 13:53 PDT
@@ -113,4 +124,3 @@
 
 ### New Features
 - Initial release of Cloud Scheduler library. ([#6482](https://github.com/googleapis/google-cloud-python/pull/6482))
-
