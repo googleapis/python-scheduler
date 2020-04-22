@@ -244,8 +244,8 @@ class CloudSchedulerClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. The location name. For example:
-                ``projects/PROJECT_ID/locations/LOCATION_ID``.
+            parent (str): Required. The job name. For example:
+                ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
                 resource, this parameter does not affect the return value. If page
@@ -333,8 +333,9 @@ class CloudSchedulerClient(object):
             >>> response = client.get_job(name)
 
         Args:
-            name (str): Required. The job name. For example:
-                ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
+            name (str): The resource has one pattern, but the API owner expects to add more
+                later. (This is the inverse of ORIGINALLY_SINGLE_PATTERN, and prevents
+                that from being necessary once there are multiple patterns.)
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -407,12 +408,47 @@ class CloudSchedulerClient(object):
             >>> response = client.create_job(parent, job)
 
         Args:
-            parent (str): Required. The location name. For example:
-                ``projects/PROJECT_ID/locations/LOCATION_ID``.
-            job (Union[dict, ~google.cloud.scheduler_v1.types.Job]): Required. The job to add. The user can optionally specify a name for the
-                job in ``name``. ``name`` cannot be the same as an existing job. If a
-                name is not specified then the system will generate a random unique name
-                that will be returned (``name``) in the response.
+            parent (str): Each of the definitions above may have "options" attached. These are
+                just annotations which may cause code to be generated slightly
+                differently or may contain hints for code that manipulates protocol
+                messages.
+
+                Clients may define custom options as extensions of the \*Options
+                messages. These extensions may not yet be known at parsing time, so the
+                parser cannot store the values in them. Instead it stores them in a
+                field in the \*Options message called uninterpreted_option. This field
+                must have the same name across all \*Options messages. We then use this
+                field to populate the extensions when we build a descriptor, at which
+                point all protos have been parsed and so all extensions are known.
+
+                Extension numbers for custom options may be chosen as follows:
+
+                -  For options which will only be used within a single application or
+                   organization, or for experimental options, use field numbers 50000
+                   through 99999. It is up to you to ensure that you do not use the same
+                   number for multiple options.
+                -  For options which will be published and used publicly by multiple
+                   independent entities, e-mail
+                   protobuf-global-extension-registry@google.com to reserve extension
+                   numbers. Simply provide your project name (e.g. Objective-C plugin)
+                   and your project website (if available) -- there's no need to explain
+                   how you intend to use them. Usually you only need one extension
+                   number. You can declare multiple options with only one extension
+                   number by putting them in a sub-message. See the Custom Options
+                   section of the docs for examples:
+                   https://developers.google.com/protocol-buffers/docs/proto#options If
+                   this turns out to be popular, a web service will be set up to
+                   automatically assign option numbers.
+            job (Union[dict, ~google.cloud.scheduler_v1.types.Job]): The resource type. It must be in the format of
+                {service_name}/{resource_type_kind}. The ``resource_type_kind`` must be
+                singular and must not include version numbers.
+
+                Example: ``storage.googleapis.com/Bucket``
+
+                The value of the resource_type_kind must follow the regular expression
+                /[A-Za-z][a-zA-Z0-9]+/. It should start with an upper case character and
+                should use PascalCase (UpperCamelCase). The maximum number of characters
+                allowed for the ``resource_type_kind`` is 100.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.scheduler_v1.types.Job`
@@ -473,15 +509,17 @@ class CloudSchedulerClient(object):
         metadata=None,
     ):
         """
-        Updates a job.
+        App Engine Routing.
 
-        If successful, the updated ``Job`` is returned. If the job does not
-        exist, ``NOT_FOUND`` is returned.
-
-        If UpdateJob does not successfully return, it is possible for the job to
-        be in an ``Job.State.UPDATE_FAILED`` state. A job in this state may not
-        be executed. If this happens, retry the UpdateJob request until a
-        successful response is received.
+        For more information about services, versions, and instances see `An
+        Overview of App
+        Engine <https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine>`__,
+        `Microservices Architecture on Google App
+        Engine <https://cloud.google.com/appengine/docs/python/microservices-on-app-engine>`__,
+        `App Engine Standard request
+        routing <https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed>`__,
+        and `App Engine Flex request
+        routing <https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed>`__.
 
         Example:
             >>> from google.cloud import scheduler_v1
@@ -497,10 +535,16 @@ class CloudSchedulerClient(object):
             >>> response = client.update_job(job, update_mask)
 
         Args:
-            job (Union[dict, ~google.cloud.scheduler_v1.types.Job]): Required. The new job properties. ``name`` must be specified.
+            job (Union[dict, ~google.cloud.scheduler_v1.types.Job]): The deadline for job attempts. If the request handler does not
+                respond by this deadline then the request is cancelled and the attempt
+                is marked as a ``DEADLINE_EXCEEDED`` failure. The failed attempt can be
+                viewed in execution logs. Cloud Scheduler will retry the job according
+                to the ``RetryConfig``.
 
-                Output only fields cannot be modified using UpdateJob. Any value
-                specified for an output only field will be ignored.
+                The allowed duration for this deadline is:
+
+                -  For ``HTTP targets``, between 15 seconds and 30 minutes.
+                -  For ``App Engine HTTP targets``, between 15 seconds and 24 hours.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.scheduler_v1.types.Job`
@@ -576,8 +620,9 @@ class CloudSchedulerClient(object):
             >>> client.delete_job(name)
 
         Args:
-            name (str): Required. The job name. For example:
-                ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
+            name (str): Signed seconds of the span of time. Must be from -315,576,000,000 to
+                +315,576,000,000 inclusive. Note: these bounds are computed from: 60
+                sec/min \* 60 min/hr \* 24 hr/day \* 365.25 days/year \* 10000 years
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -631,12 +676,127 @@ class CloudSchedulerClient(object):
         metadata=None,
     ):
         """
-        Pauses a job.
+        A simple descriptor of a resource type.
 
-        If a job is paused then the system will stop executing the job until it
-        is re-enabled via ``ResumeJob``. The state of the job is stored in
-        ``state``; if paused it will be set to ``Job.State.PAUSED``. A job must
-        be in ``Job.State.ENABLED`` to be paused.
+        ResourceDescriptor annotates a resource message (either by means of a
+        protobuf annotation or use in the service config), and associates the
+        resource's schema, the resource type, and the pattern of the resource
+        name.
+
+        Example:
+
+        ::
+
+            message Topic {
+              // Indicates this message defines a resource schema.
+              // Declares the resource type in the format of {service}/{kind}.
+              // For Kubernetes resources, the format is {api group}/{kind}.
+              option (google.api.resource) = {
+                type: "pubsub.googleapis.com/Topic"
+                name_descriptor: {
+                  pattern: "projects/{project}/topics/{topic}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                  parent_name_extractor: "projects/{project}"
+                }
+              };
+            }
+
+        The ResourceDescriptor Yaml config will look like:
+
+        ::
+
+            resources:
+            - type: "pubsub.googleapis.com/Topic"
+              name_descriptor:
+                - pattern: "projects/{project}/topics/{topic}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                  parent_name_extractor: "projects/{project}"
+
+        Sometimes, resources have multiple patterns, typically because they can
+        live under multiple parents.
+
+        Example:
+
+        ::
+
+            message LogEntry {
+              option (google.api.resource) = {
+                type: "logging.googleapis.com/LogEntry"
+                name_descriptor: {
+                  pattern: "projects/{project}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                  parent_name_extractor: "projects/{project}"
+                }
+                name_descriptor: {
+                  pattern: "folders/{folder}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Folder"
+                  parent_name_extractor: "folders/{folder}"
+                }
+                name_descriptor: {
+                  pattern: "organizations/{organization}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Organization"
+                  parent_name_extractor: "organizations/{organization}"
+                }
+                name_descriptor: {
+                  pattern: "billingAccounts/{billing_account}/logs/{log}"
+                  parent_type: "billing.googleapis.com/BillingAccount"
+                  parent_name_extractor: "billingAccounts/{billing_account}"
+                }
+              };
+            }
+
+        The ResourceDescriptor Yaml config will look like:
+
+        ::
+
+            resources:
+            - type: 'logging.googleapis.com/LogEntry'
+              name_descriptor:
+                - pattern: "projects/{project}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                  parent_name_extractor: "projects/{project}"
+                - pattern: "folders/{folder}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Folder"
+                  parent_name_extractor: "folders/{folder}"
+                - pattern: "organizations/{organization}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Organization"
+                  parent_name_extractor: "organizations/{organization}"
+                - pattern: "billingAccounts/{billing_account}/logs/{log}"
+                  parent_type: "billing.googleapis.com/BillingAccount"
+                  parent_name_extractor: "billingAccounts/{billing_account}"
+
+        For flexible resources, the resource name doesn't contain parent names,
+        but the resource itself has parents for policy evaluation.
+
+        Example:
+
+        ::
+
+            message Shelf {
+              option (google.api.resource) = {
+                type: "library.googleapis.com/Shelf"
+                name_descriptor: {
+                  pattern: "shelves/{shelf}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                }
+                name_descriptor: {
+                  pattern: "shelves/{shelf}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Folder"
+                }
+              };
+            }
+
+        The ResourceDescriptor Yaml config will look like:
+
+        ::
+
+            resources:
+            - type: 'library.googleapis.com/Shelf'
+              name_descriptor:
+                - pattern: "shelves/{shelf}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                - pattern: "shelves/{shelf}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Folder"
 
         Example:
             >>> from google.cloud import scheduler_v1
@@ -648,8 +808,12 @@ class CloudSchedulerClient(object):
             >>> response = client.pause_job(name)
 
         Args:
-            name (str): Required. The job name. For example:
-                ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
+            name (str): Settings that determine the retry behavior.
+
+                By default, if a job does not complete successfully (meaning that an
+                acknowledgement is not received from the handler, then it will be
+                retried with exponential backoff according to the settings in
+                ``RetryConfig``.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -706,12 +870,8 @@ class CloudSchedulerClient(object):
         metadata=None,
     ):
         """
-        Resume a job.
-
-        This method reenables a job after it has been ``Job.State.PAUSED``. The
-        state of a job is stored in ``Job.state``; after calling this method it
-        will be set to ``Job.State.ENABLED``. A job must be in
-        ``Job.State.PAUSED`` to be resumed.
+        If set, gives the index of a oneof in the containing type's
+        oneof_decl list. This field is a member of that oneof.
 
         Example:
             >>> from google.cloud import scheduler_v1
@@ -723,8 +883,8 @@ class CloudSchedulerClient(object):
             >>> response = client.resume_job(name)
 
         Args:
-            name (str): Required. The job name. For example:
-                ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
+            name (str): Required. The location name. For example:
+                ``projects/PROJECT_ID/locations/LOCATION_ID``.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -796,8 +956,9 @@ class CloudSchedulerClient(object):
             >>> response = client.run_job(name)
 
         Args:
-            name (str): Required. The job name. For example:
-                ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
+            name (str): Denotes a field as required. This indicates that the field **must**
+                be provided as part of the request, and failure to do so will cause an
+                error (usually ``INVALID_ARGUMENT``).
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.

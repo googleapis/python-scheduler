@@ -153,15 +153,127 @@ class CloudSchedulerGrpcTransport(object):
     def update_job(self):
         """Return the gRPC stub for :meth:`CloudSchedulerClient.update_job`.
 
-        Updates a job.
+        A simple descriptor of a resource type.
 
-        If successful, the updated ``Job`` is returned. If the job does not
-        exist, ``NOT_FOUND`` is returned.
+        ResourceDescriptor annotates a resource message (either by means of a
+        protobuf annotation or use in the service config), and associates the
+        resource's schema, the resource type, and the pattern of the resource
+        name.
 
-        If UpdateJob does not successfully return, it is possible for the job to
-        be in an ``Job.State.UPDATE_FAILED`` state. A job in this state may not
-        be executed. If this happens, retry the UpdateJob request until a
-        successful response is received.
+        Example:
+
+        ::
+
+            message Topic {
+              // Indicates this message defines a resource schema.
+              // Declares the resource type in the format of {service}/{kind}.
+              // For Kubernetes resources, the format is {api group}/{kind}.
+              option (google.api.resource) = {
+                type: "pubsub.googleapis.com/Topic"
+                name_descriptor: {
+                  pattern: "projects/{project}/topics/{topic}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                  parent_name_extractor: "projects/{project}"
+                }
+              };
+            }
+
+        The ResourceDescriptor Yaml config will look like:
+
+        ::
+
+            resources:
+            - type: "pubsub.googleapis.com/Topic"
+              name_descriptor:
+                - pattern: "projects/{project}/topics/{topic}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                  parent_name_extractor: "projects/{project}"
+
+        Sometimes, resources have multiple patterns, typically because they can
+        live under multiple parents.
+
+        Example:
+
+        ::
+
+            message LogEntry {
+              option (google.api.resource) = {
+                type: "logging.googleapis.com/LogEntry"
+                name_descriptor: {
+                  pattern: "projects/{project}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                  parent_name_extractor: "projects/{project}"
+                }
+                name_descriptor: {
+                  pattern: "folders/{folder}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Folder"
+                  parent_name_extractor: "folders/{folder}"
+                }
+                name_descriptor: {
+                  pattern: "organizations/{organization}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Organization"
+                  parent_name_extractor: "organizations/{organization}"
+                }
+                name_descriptor: {
+                  pattern: "billingAccounts/{billing_account}/logs/{log}"
+                  parent_type: "billing.googleapis.com/BillingAccount"
+                  parent_name_extractor: "billingAccounts/{billing_account}"
+                }
+              };
+            }
+
+        The ResourceDescriptor Yaml config will look like:
+
+        ::
+
+            resources:
+            - type: 'logging.googleapis.com/LogEntry'
+              name_descriptor:
+                - pattern: "projects/{project}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                  parent_name_extractor: "projects/{project}"
+                - pattern: "folders/{folder}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Folder"
+                  parent_name_extractor: "folders/{folder}"
+                - pattern: "organizations/{organization}/logs/{log}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Organization"
+                  parent_name_extractor: "organizations/{organization}"
+                - pattern: "billingAccounts/{billing_account}/logs/{log}"
+                  parent_type: "billing.googleapis.com/BillingAccount"
+                  parent_name_extractor: "billingAccounts/{billing_account}"
+
+        For flexible resources, the resource name doesn't contain parent names,
+        but the resource itself has parents for policy evaluation.
+
+        Example:
+
+        ::
+
+            message Shelf {
+              option (google.api.resource) = {
+                type: "library.googleapis.com/Shelf"
+                name_descriptor: {
+                  pattern: "shelves/{shelf}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                }
+                name_descriptor: {
+                  pattern: "shelves/{shelf}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Folder"
+                }
+              };
+            }
+
+        The ResourceDescriptor Yaml config will look like:
+
+        ::
+
+            resources:
+            - type: 'library.googleapis.com/Shelf'
+              name_descriptor:
+                - pattern: "shelves/{shelf}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Project"
+                - pattern: "shelves/{shelf}"
+                  parent_type: "cloudresourcemanager.googleapis.com/Folder"
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -187,12 +299,7 @@ class CloudSchedulerGrpcTransport(object):
     def pause_job(self):
         """Return the gRPC stub for :meth:`CloudSchedulerClient.pause_job`.
 
-        Pauses a job.
-
-        If a job is paused then the system will stop executing the job until it
-        is re-enabled via ``ResumeJob``. The state of the job is stored in
-        ``state``; if paused it will be set to ``Job.State.PAUSED``. A job must
-        be in ``Job.State.ENABLED`` to be paused.
+        Request message for ``ResumeJob``.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -205,12 +312,8 @@ class CloudSchedulerGrpcTransport(object):
     def resume_job(self):
         """Return the gRPC stub for :meth:`CloudSchedulerClient.resume_job`.
 
-        Resume a job.
-
-        This method reenables a job after it has been ``Job.State.PAUSED``. The
-        state of a job is stored in ``Job.state``; after calling this method it
-        will be set to ``Job.State.ENABLED``. A job must be in
-        ``Job.State.PAUSED`` to be resumed.
+        If set, gives the index of a oneof in the containing type's
+        oneof_decl list. This field is a member of that oneof.
 
         Returns:
             Callable: A callable which accepts the appropriate
