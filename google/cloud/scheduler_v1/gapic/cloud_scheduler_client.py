@@ -409,10 +409,10 @@ class CloudSchedulerClient(object):
         Args:
             parent (str): Required. The location name. For example:
                 ``projects/PROJECT_ID/locations/LOCATION_ID``.
-            job (Union[dict, ~google.cloud.scheduler_v1.types.Job]): Required. The job to add. The user can optionally specify a name for the
-                job in ``name``. ``name`` cannot be the same as an existing job. If a
-                name is not specified then the system will generate a random unique name
-                that will be returned (``name``) in the response.
+            job (Union[dict, ~google.cloud.scheduler_v1.types.Job]): Required. The job to add. The user can optionally specify a name for
+                the job in ``name``. ``name`` cannot be the same as an existing job. If
+                a name is not specified then the system will generate a random unique
+                name that will be returned (``name``) in the response.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.scheduler_v1.types.Job`
