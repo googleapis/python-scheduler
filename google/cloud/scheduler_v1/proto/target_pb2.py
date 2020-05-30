@@ -988,8 +988,8 @@ PubsubTarget = _reflection.GeneratedProtocolMessageType(
         ),
         "DESCRIPTOR": _PUBSUBTARGET,
         "__module__": "google.cloud.scheduler_v1.proto.target_pb2",
-        "__doc__": """Pub/Sub target. The job will be delivered by publishing a message to the
-  given Pub/Sub topic.
+        "__doc__": """Pub/Sub target. The job will be delivered by publishing a
+  message to the given Pub/Sub topic.
   
   
   Attributes:
@@ -1146,8 +1146,7 @@ OidcToken = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _OIDCTOKEN,
         "__module__": "google.cloud.scheduler_v1.proto.target_pb2",
-        "__doc__": """Contains information needed for generating an `OpenID
-  Connect
+        "__doc__": """Contains information needed for generating an `OpenID Connect
   token <https://developers.google.com/identity/protocols/OpenIDConnect>`__.
   This type of authorization can be used for many scenarios, including
   calling Cloud Run, or endpoints where you intend to validate the token
