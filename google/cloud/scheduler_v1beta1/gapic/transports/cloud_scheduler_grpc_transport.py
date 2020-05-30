@@ -111,6 +111,55 @@ class CloudSchedulerGrpcTransport(object):
         return self._channel
 
     @property
+    def delete_job(self):
+        """Return the gRPC stub for :meth:`CloudSchedulerClient.delete_job`.
+
+        Deletes a job.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["cloud_scheduler_stub"].DeleteJob
+
+    @property
+    def pause_job(self):
+        """Return the gRPC stub for :meth:`CloudSchedulerClient.pause_job`.
+
+        Pauses a job.
+
+        If a job is paused then the system will stop executing the job until it
+        is re-enabled via ``ResumeJob``. The state of the job is stored in
+        ``state``; if paused it will be set to ``Job.State.PAUSED``. A job must
+        be in ``Job.State.ENABLED`` to be paused.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["cloud_scheduler_stub"].PauseJob
+
+    @property
+    def resume_job(self):
+        """Return the gRPC stub for :meth:`CloudSchedulerClient.resume_job`.
+
+        Resume a job.
+
+        This method reenables a job after it has been ``Job.State.PAUSED``. The
+        state of a job is stored in ``Job.state``; after calling this method it
+        will be set to ``Job.State.ENABLED``. A job must be in
+        ``Job.State.PAUSED`` to be resumed.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["cloud_scheduler_stub"].ResumeJob
+
+    @property
     def list_jobs(self):
         """Return the gRPC stub for :meth:`CloudSchedulerClient.list_jobs`.
 
@@ -169,55 +218,6 @@ class CloudSchedulerGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["cloud_scheduler_stub"].UpdateJob
-
-    @property
-    def delete_job(self):
-        """Return the gRPC stub for :meth:`CloudSchedulerClient.delete_job`.
-
-        Deletes a job.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["cloud_scheduler_stub"].DeleteJob
-
-    @property
-    def pause_job(self):
-        """Return the gRPC stub for :meth:`CloudSchedulerClient.pause_job`.
-
-        Pauses a job.
-
-        If a job is paused then the system will stop executing the job until it
-        is re-enabled via ``ResumeJob``. The state of the job is stored in
-        ``state``; if paused it will be set to ``Job.State.PAUSED``. A job must
-        be in ``Job.State.ENABLED`` to be paused.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["cloud_scheduler_stub"].PauseJob
-
-    @property
-    def resume_job(self):
-        """Return the gRPC stub for :meth:`CloudSchedulerClient.resume_job`.
-
-        Resume a job.
-
-        This method reenables a job after it has been ``Job.State.PAUSED``. The
-        state of a job is stored in ``Job.state``; after calling this method it
-        will be set to ``Job.State.ENABLED``. A job must be in
-        ``Job.State.PAUSED`` to be resumed.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["cloud_scheduler_stub"].ResumeJob
 
     @property
     def run_job(self):

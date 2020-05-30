@@ -63,6 +63,37 @@ class CustomException(Exception):
 
 
 class TestCloudSchedulerClient(object):
+    def test_delete_job(self):
+        channel = ChannelStub()
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = scheduler_v1.CloudSchedulerClient()
+
+        # Setup Request
+        name = client.job_path("[PROJECT]", "[LOCATION]", "[JOB]")
+
+        client.delete_job(name)
+
+        assert len(channel.requests) == 1
+        expected_request = cloudscheduler_pb2.DeleteJobRequest(name=name)
+        actual_request = channel.requests[0][1]
+        assert expected_request == actual_request
+
+    def test_delete_job_exception(self):
+        # Mock the API response
+        channel = ChannelStub(responses=[CustomException()])
+        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
+        with patch as create_channel:
+            create_channel.return_value = channel
+            client = scheduler_v1.CloudSchedulerClient()
+
+        # Setup request
+        name = client.job_path("[PROJECT]", "[LOCATION]", "[JOB]")
+
+        with pytest.raises(CustomException):
+            client.delete_job(name)
+
     def test_list_jobs(self):
         # Setup Expected Response
         next_page_token = ""
@@ -249,37 +280,6 @@ class TestCloudSchedulerClient(object):
 
         with pytest.raises(CustomException):
             client.update_job(job, update_mask)
-
-    def test_delete_job(self):
-        channel = ChannelStub()
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = scheduler_v1.CloudSchedulerClient()
-
-        # Setup Request
-        name = client.job_path("[PROJECT]", "[LOCATION]", "[JOB]")
-
-        client.delete_job(name)
-
-        assert len(channel.requests) == 1
-        expected_request = cloudscheduler_pb2.DeleteJobRequest(name=name)
-        actual_request = channel.requests[0][1]
-        assert expected_request == actual_request
-
-    def test_delete_job_exception(self):
-        # Mock the API response
-        channel = ChannelStub(responses=[CustomException()])
-        patch = mock.patch("google.api_core.grpc_helpers.create_channel")
-        with patch as create_channel:
-            create_channel.return_value = channel
-            client = scheduler_v1.CloudSchedulerClient()
-
-        # Setup request
-        name = client.job_path("[PROJECT]", "[LOCATION]", "[JOB]")
-
-        with pytest.raises(CustomException):
-            client.delete_job(name)
 
     def test_pause_job(self):
         # Setup Expected Response
