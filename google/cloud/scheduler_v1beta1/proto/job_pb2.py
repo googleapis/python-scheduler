@@ -570,6 +570,7 @@ Job = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _JOB,
         "__module__": "google.cloud.scheduler_v1beta1.proto.job_pb2",
         "__doc__": """Configuration for a job. The maximum allowed size for a job is 100KB.
+  
   Attributes:
       name:
           Optionally caller-specified in [CreateJob][google.cloud.schedu
@@ -680,6 +681,7 @@ RetryConfig = _reflection.GeneratedProtocolMessageType(
   received from the handler, then it will be retried with exponential
   backoff according to the settings in
   [RetryConfig][google.cloud.scheduler.v1beta1.RetryConfig].
+  
   Attributes:
       retry_count:
           The number of attempts that the system will make to run a job

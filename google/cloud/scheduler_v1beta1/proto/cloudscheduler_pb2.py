@@ -536,6 +536,7 @@ ListJobsRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.scheduler_v1beta1.proto.cloudscheduler_pb2",
         "__doc__": """Request message for listing jobs using
   [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
+  
   Attributes:
       parent:
           Required. The location name. For example:
@@ -570,6 +571,7 @@ ListJobsResponse = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.scheduler_v1beta1.proto.cloudscheduler_pb2",
         "__doc__": """Response message for listing jobs using
   [ListJobs][google.cloud.scheduler.v1beta1.CloudScheduler.ListJobs].
+  
   Attributes:
       jobs:
           The list of jobs.
@@ -595,6 +597,7 @@ GetJobRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.scheduler_v1beta1.proto.cloudscheduler_pb2",
         "__doc__": """Request message for
   [GetJob][google.cloud.scheduler.v1beta1.CloudScheduler.GetJob].
+  
   Attributes:
       name:
           Required. The job name. For example:
@@ -613,6 +616,7 @@ CreateJobRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.scheduler_v1beta1.proto.cloudscheduler_pb2",
         "__doc__": """Request message for
   [CreateJob][google.cloud.scheduler.v1beta1.CloudScheduler.CreateJob].
+  
   Attributes:
       parent:
           Required. The location name. For example:
@@ -640,6 +644,7 @@ UpdateJobRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.scheduler_v1beta1.proto.cloudscheduler_pb2",
         "__doc__": """Request message for
   [UpdateJob][google.cloud.scheduler.v1beta1.CloudScheduler.UpdateJob].
+  
   Attributes:
       job:
           Required. The new job properties.
@@ -664,6 +669,7 @@ DeleteJobRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.scheduler_v1beta1.proto.cloudscheduler_pb2",
         "__doc__": """Request message for deleting a job using
   [DeleteJob][google.cloud.scheduler.v1beta1.CloudScheduler.DeleteJob].
+  
   Attributes:
       name:
           Required. The job name. For example:
@@ -682,6 +688,7 @@ PauseJobRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.scheduler_v1beta1.proto.cloudscheduler_pb2",
         "__doc__": """Request message for
   [PauseJob][google.cloud.scheduler.v1beta1.CloudScheduler.PauseJob].
+  
   Attributes:
       name:
           Required. The job name. For example:
@@ -700,6 +707,7 @@ ResumeJobRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.scheduler_v1beta1.proto.cloudscheduler_pb2",
         "__doc__": """Request message for
   [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob].
+  
   Attributes:
       name:
           Required. The job name. For example:
@@ -718,6 +726,7 @@ RunJobRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.scheduler_v1beta1.proto.cloudscheduler_pb2",
         "__doc__": """Request message for forcing a job to run now using
   [RunJob][google.cloud.scheduler.v1beta1.CloudScheduler.RunJob].
+  
   Attributes:
       name:
           Required. The job name. For example:
