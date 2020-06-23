@@ -111,6 +111,19 @@ class CloudSchedulerGrpcTransport(object):
         return self._channel
 
     @property
+    def delete_job(self):
+        """Return the gRPC stub for :meth:`CloudSchedulerClient.delete_job`.
+
+        Deletes a job.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["cloud_scheduler_stub"].DeleteJob
+
+    @property
     def list_jobs(self):
         """Return the gRPC stub for :meth:`CloudSchedulerClient.list_jobs`.
 
@@ -169,19 +182,6 @@ class CloudSchedulerGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["cloud_scheduler_stub"].UpdateJob
-
-    @property
-    def delete_job(self):
-        """Return the gRPC stub for :meth:`CloudSchedulerClient.delete_job`.
-
-        Deletes a job.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["cloud_scheduler_stub"].DeleteJob
 
     @property
     def pause_job(self):
