@@ -28,6 +28,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.scheduler.v1",
     syntax="proto3",
     serialized_options=b"\n\035com.google.cloud.scheduler.v1B\016SchedulerProtoP\001ZBgoogle.golang.org/genproto/googleapis/cloud/scheduler/v1;scheduler\242\002\tSCHEDULER",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n4google/cloud/scheduler_v1/proto/cloudscheduler.proto\x12\x19google.cloud.scheduler.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a)google/cloud/scheduler_v1/proto/job.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto"s\n\x0fListJobsRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\x12!cloudscheduler.googleapis.com/Job\x12\x11\n\tpage_size\x18\x05 \x01(\x05\x12\x12\n\npage_token\x18\x06 \x01(\t"Y\n\x10ListJobsResponse\x12,\n\x04jobs\x18\x01 \x03(\x0b\x32\x1e.google.cloud.scheduler.v1.Job\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"H\n\rGetJobRequest\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!cloudscheduler.googleapis.com/Job"\x7f\n\x10\x43reateJobRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\x12!cloudscheduler.googleapis.com/Job\x12\x30\n\x03job\x18\x02 \x01(\x0b\x32\x1e.google.cloud.scheduler.v1.JobB\x03\xe0\x41\x02"z\n\x10UpdateJobRequest\x12\x30\n\x03job\x18\x01 \x01(\x0b\x32\x1e.google.cloud.scheduler.v1.JobB\x03\xe0\x41\x02\x12\x34\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x03\xe0\x41\x02"K\n\x10\x44\x65leteJobRequest\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!cloudscheduler.googleapis.com/Job"J\n\x0fPauseJobRequest\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!cloudscheduler.googleapis.com/Job"K\n\x10ResumeJobRequest\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!cloudscheduler.googleapis.com/Job"H\n\rRunJobRequest\x12\x37\n\x04name\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!cloudscheduler.googleapis.com/Job2\xb3\n\n\x0e\x43loudScheduler\x12\x9e\x01\n\x08ListJobs\x12*.google.cloud.scheduler.v1.ListJobsRequest\x1a+.google.cloud.scheduler.v1.ListJobsResponse"9\x82\xd3\xe4\x93\x02*\x12(/v1/{parent=projects/*/locations/*}/jobs\xda\x41\x06parent\x12\x8b\x01\n\x06GetJob\x12(.google.cloud.scheduler.v1.GetJobRequest\x1a\x1e.google.cloud.scheduler.v1.Job"7\x82\xd3\xe4\x93\x02*\x12(/v1/{name=projects/*/locations/*/jobs/*}\xda\x41\x04name\x12\x9c\x01\n\tCreateJob\x12+.google.cloud.scheduler.v1.CreateJobRequest\x1a\x1e.google.cloud.scheduler.v1.Job"B\x82\xd3\xe4\x93\x02/"(/v1/{parent=projects/*/locations/*}/jobs:\x03job\xda\x41\nparent,job\x12\xa5\x01\n\tUpdateJob\x12+.google.cloud.scheduler.v1.UpdateJobRequest\x1a\x1e.google.cloud.scheduler.v1.Job"K\x82\xd3\xe4\x93\x02\x33\x32,/v1/{job.name=projects/*/locations/*/jobs/*}:\x03job\xda\x41\x0fjob,update_mask\x12\x89\x01\n\tDeleteJob\x12+.google.cloud.scheduler.v1.DeleteJobRequest\x1a\x16.google.protobuf.Empty"7\x82\xd3\xe4\x93\x02**(/v1/{name=projects/*/locations/*/jobs/*}\xda\x41\x04name\x12\x98\x01\n\x08PauseJob\x12*.google.cloud.scheduler.v1.PauseJobRequest\x1a\x1e.google.cloud.scheduler.v1.Job"@\x82\xd3\xe4\x93\x02\x33"./v1/{name=projects/*/locations/*/jobs/*}:pause:\x01*\xda\x41\x04name\x12\x9b\x01\n\tResumeJob\x12+.google.cloud.scheduler.v1.ResumeJobRequest\x1a\x1e.google.cloud.scheduler.v1.Job"A\x82\xd3\xe4\x93\x02\x34"//v1/{name=projects/*/locations/*/jobs/*}:resume:\x01*\xda\x41\x04name\x12\x92\x01\n\x06RunJob\x12(.google.cloud.scheduler.v1.RunJobRequest\x1a\x1e.google.cloud.scheduler.v1.Job">\x82\xd3\xe4\x93\x02\x31",/v1/{name=projects/*/locations/*/jobs/*}:run:\x01*\xda\x41\x04name\x1aQ\xca\x41\x1d\x63loudscheduler.googleapis.com\xd2\x41.https://www.googleapis.com/auth/cloud-platformB\x81\x01\n\x1d\x63om.google.cloud.scheduler.v1B\x0eSchedulerProtoP\x01ZBgoogle.golang.org/genproto/googleapis/cloud/scheduler/v1;scheduler\xa2\x02\tSCHEDULERb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -47,6 +48,7 @@ _LISTJOBSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -65,6 +67,7 @@ _LISTJOBSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\022!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -83,6 +86,7 @@ _LISTJOBSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -101,6 +105,7 @@ _LISTJOBSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -122,6 +127,7 @@ _LISTJOBSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="jobs",
@@ -140,6 +146,7 @@ _LISTJOBSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -158,6 +165,7 @@ _LISTJOBSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -179,6 +187,7 @@ _GETJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -197,6 +206,7 @@ _GETJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -218,6 +228,7 @@ _CREATEJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -236,6 +247,7 @@ _CREATEJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\022!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="job",
@@ -254,6 +266,7 @@ _CREATEJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -275,6 +288,7 @@ _UPDATEJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="job",
@@ -293,6 +307,7 @@ _UPDATEJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="update_mask",
@@ -311,6 +326,7 @@ _UPDATEJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -332,6 +348,7 @@ _DELETEJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -350,6 +367,7 @@ _DELETEJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -371,6 +389,7 @@ _PAUSEJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -389,6 +408,7 @@ _PAUSEJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -410,6 +430,7 @@ _RESUMEJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -428,6 +449,7 @@ _RESUMEJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -449,6 +471,7 @@ _RUNJOBREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -467,6 +490,7 @@ _RUNJOBREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -721,6 +745,7 @@ _CLOUDSCHEDULER = _descriptor.ServiceDescriptor(
     file=DESCRIPTOR,
     index=0,
     serialized_options=b"\312A\035cloudscheduler.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platform",
+    create_key=_descriptor._internal_create_key,
     serialized_start=1144,
     serialized_end=2475,
     methods=[
@@ -732,6 +757,7 @@ _CLOUDSCHEDULER = _descriptor.ServiceDescriptor(
             input_type=_LISTJOBSREQUEST,
             output_type=_LISTJOBSRESPONSE,
             serialized_options=b"\202\323\344\223\002*\022(/v1/{parent=projects/*/locations/*}/jobs\332A\006parent",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetJob",
@@ -741,6 +767,7 @@ _CLOUDSCHEDULER = _descriptor.ServiceDescriptor(
             input_type=_GETJOBREQUEST,
             output_type=google_dot_cloud_dot_scheduler__v1_dot_proto_dot_job__pb2._JOB,
             serialized_options=b"\202\323\344\223\002*\022(/v1/{name=projects/*/locations/*/jobs/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="CreateJob",
@@ -750,6 +777,7 @@ _CLOUDSCHEDULER = _descriptor.ServiceDescriptor(
             input_type=_CREATEJOBREQUEST,
             output_type=google_dot_cloud_dot_scheduler__v1_dot_proto_dot_job__pb2._JOB,
             serialized_options=b'\202\323\344\223\002/"(/v1/{parent=projects/*/locations/*}/jobs:\003job\332A\nparent,job',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="UpdateJob",
@@ -759,6 +787,7 @@ _CLOUDSCHEDULER = _descriptor.ServiceDescriptor(
             input_type=_UPDATEJOBREQUEST,
             output_type=google_dot_cloud_dot_scheduler__v1_dot_proto_dot_job__pb2._JOB,
             serialized_options=b"\202\323\344\223\00232,/v1/{job.name=projects/*/locations/*/jobs/*}:\003job\332A\017job,update_mask",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="DeleteJob",
@@ -768,6 +797,7 @@ _CLOUDSCHEDULER = _descriptor.ServiceDescriptor(
             input_type=_DELETEJOBREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b"\202\323\344\223\002**(/v1/{name=projects/*/locations/*/jobs/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="PauseJob",
@@ -777,6 +807,7 @@ _CLOUDSCHEDULER = _descriptor.ServiceDescriptor(
             input_type=_PAUSEJOBREQUEST,
             output_type=google_dot_cloud_dot_scheduler__v1_dot_proto_dot_job__pb2._JOB,
             serialized_options=b'\202\323\344\223\0023"./v1/{name=projects/*/locations/*/jobs/*}:pause:\001*\332A\004name',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ResumeJob",
@@ -786,6 +817,7 @@ _CLOUDSCHEDULER = _descriptor.ServiceDescriptor(
             input_type=_RESUMEJOBREQUEST,
             output_type=google_dot_cloud_dot_scheduler__v1_dot_proto_dot_job__pb2._JOB,
             serialized_options=b'\202\323\344\223\0024"//v1/{name=projects/*/locations/*/jobs/*}:resume:\001*\332A\004name',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="RunJob",
@@ -795,6 +827,7 @@ _CLOUDSCHEDULER = _descriptor.ServiceDescriptor(
             input_type=_RUNJOBREQUEST,
             output_type=google_dot_cloud_dot_scheduler__v1_dot_proto_dot_job__pb2._JOB,
             serialized_options=b'\202\323\344\223\0021",/v1/{name=projects/*/locations/*/jobs/*}:run:\001*\332A\004name',
+            create_key=_descriptor._internal_create_key,
         ),
     ],
 )

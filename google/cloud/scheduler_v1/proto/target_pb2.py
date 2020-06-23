@@ -22,6 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.scheduler.v1",
     syntax="proto3",
     serialized_options=b"\n\035com.google.cloud.scheduler.v1B\013TargetProtoP\001ZBgoogle.golang.org/genproto/googleapis/cloud/scheduler/v1;scheduler\352A@\n\033pubsub.googleapis.com/Topic\022!projects/{project}/topics/{topic}",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n,google/cloud/scheduler_v1/proto/target.proto\x12\x19google.cloud.scheduler.v1\x1a\x19google/api/resource.proto\x1a\x1cgoogle/api/annotations.proto"\xea\x02\n\nHttpTarget\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12:\n\x0bhttp_method\x18\x02 \x01(\x0e\x32%.google.cloud.scheduler.v1.HttpMethod\x12\x43\n\x07headers\x18\x03 \x03(\x0b\x32\x32.google.cloud.scheduler.v1.HttpTarget.HeadersEntry\x12\x0c\n\x04\x62ody\x18\x04 \x01(\x0c\x12<\n\x0boauth_token\x18\x05 \x01(\x0b\x32%.google.cloud.scheduler.v1.OAuthTokenH\x00\x12:\n\noidc_token\x18\x06 \x01(\x0b\x32$.google.cloud.scheduler.v1.OidcTokenH\x00\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x16\n\x14\x61uthorization_header"\xbc\x02\n\x13\x41ppEngineHttpTarget\x12:\n\x0bhttp_method\x18\x01 \x01(\x0e\x32%.google.cloud.scheduler.v1.HttpMethod\x12G\n\x12\x61pp_engine_routing\x18\x02 \x01(\x0b\x32+.google.cloud.scheduler.v1.AppEngineRouting\x12\x14\n\x0crelative_uri\x18\x03 \x01(\t\x12L\n\x07headers\x18\x04 \x03(\x0b\x32;.google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry\x12\x0c\n\x04\x62ody\x18\x05 \x01(\x0c\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01"\xd2\x01\n\x0cPubsubTarget\x12\x34\n\ntopic_name\x18\x01 \x01(\tB \xfa\x41\x1d\n\x1bpubsub.googleapis.com/Topic\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x12K\n\nattributes\x18\x04 \x03(\x0b\x32\x37.google.cloud.scheduler.v1.PubsubTarget.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01"T\n\x10\x41ppEngineRouting\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x10\n\x08instance\x18\x03 \x01(\t\x12\x0c\n\x04host\x18\x04 \x01(\t":\n\nOAuthToken\x12\x1d\n\x15service_account_email\x18\x01 \x01(\t\x12\r\n\x05scope\x18\x02 \x01(\t"<\n\tOidcToken\x12\x1d\n\x15service_account_email\x18\x01 \x01(\t\x12\x10\n\x08\x61udience\x18\x02 \x01(\t*s\n\nHttpMethod\x12\x1b\n\x17HTTP_METHOD_UNSPECIFIED\x10\x00\x12\x08\n\x04POST\x10\x01\x12\x07\n\x03GET\x10\x02\x12\x08\n\x04HEAD\x10\x03\x12\x07\n\x03PUT\x10\x04\x12\n\n\x06\x44\x45LETE\x10\x05\x12\t\n\x05PATCH\x10\x06\x12\x0b\n\x07OPTIONS\x10\x07\x42\xb5\x01\n\x1d\x63om.google.cloud.scheduler.v1B\x0bTargetProtoP\x01ZBgoogle.golang.org/genproto/googleapis/cloud/scheduler/v1;scheduler\xea\x41@\n\x1bpubsub.googleapis.com/Topic\x12!projects/{project}/topics/{topic}b\x06proto3',
     dependencies=[
         google_dot_api_dot_resource__pb2.DESCRIPTOR,
@@ -34,6 +35,7 @@ _HTTPMETHOD = _descriptor.EnumDescriptor(
     full_name="google.cloud.scheduler.v1.HttpMethod",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="HTTP_METHOD_UNSPECIFIED",
@@ -41,27 +43,63 @@ _HTTPMETHOD = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="POST", index=1, number=1, serialized_options=None, type=None
+            name="POST",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="GET", index=2, number=2, serialized_options=None, type=None
+            name="GET",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="HEAD", index=3, number=3, serialized_options=None, type=None
+            name="HEAD",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="PUT", index=4, number=4, serialized_options=None, type=None
+            name="PUT",
+            index=4,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="DELETE", index=5, number=5, serialized_options=None, type=None
+            name="DELETE",
+            index=5,
+            number=5,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="PATCH", index=6, number=6, serialized_options=None, type=None
+            name="PATCH",
+            index=6,
+            number=6,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="OPTIONS", index=7, number=7, serialized_options=None, type=None
+            name="OPTIONS",
+            index=7,
+            number=7,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -88,6 +126,7 @@ _HTTPTARGET_HEADERSENTRY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="key",
@@ -106,6 +145,7 @@ _HTTPTARGET_HEADERSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="value",
@@ -124,6 +164,7 @@ _HTTPTARGET_HEADERSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -144,6 +185,7 @@ _HTTPTARGET = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="uri",
@@ -162,6 +204,7 @@ _HTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="http_method",
@@ -180,6 +223,7 @@ _HTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="headers",
@@ -198,6 +242,7 @@ _HTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="body",
@@ -216,6 +261,7 @@ _HTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="oauth_token",
@@ -234,6 +280,7 @@ _HTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="oidc_token",
@@ -252,6 +299,7 @@ _HTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -267,6 +315,7 @@ _HTTPTARGET = _descriptor.Descriptor(
             full_name="google.cloud.scheduler.v1.HttpTarget.authorization_header",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -281,6 +330,7 @@ _APPENGINEHTTPTARGET_HEADERSENTRY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="key",
@@ -299,6 +349,7 @@ _APPENGINEHTTPTARGET_HEADERSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="value",
@@ -317,6 +368,7 @@ _APPENGINEHTTPTARGET_HEADERSENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -337,6 +389,7 @@ _APPENGINEHTTPTARGET = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="http_method",
@@ -355,6 +408,7 @@ _APPENGINEHTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="app_engine_routing",
@@ -373,6 +427,7 @@ _APPENGINEHTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="relative_uri",
@@ -391,6 +446,7 @@ _APPENGINEHTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="headers",
@@ -409,6 +465,7 @@ _APPENGINEHTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="body",
@@ -427,6 +484,7 @@ _APPENGINEHTTPTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -448,6 +506,7 @@ _PUBSUBTARGET_ATTRIBUTESENTRY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="key",
@@ -466,6 +525,7 @@ _PUBSUBTARGET_ATTRIBUTESENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="value",
@@ -484,6 +544,7 @@ _PUBSUBTARGET_ATTRIBUTESENTRY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -504,6 +565,7 @@ _PUBSUBTARGET = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="topic_name",
@@ -522,6 +584,7 @@ _PUBSUBTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\372A\035\n\033pubsub.googleapis.com/Topic",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="data",
@@ -540,6 +603,7 @@ _PUBSUBTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="attributes",
@@ -558,6 +622,7 @@ _PUBSUBTARGET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -579,6 +644,7 @@ _APPENGINEROUTING = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="service",
@@ -597,6 +663,7 @@ _APPENGINEROUTING = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="version",
@@ -615,6 +682,7 @@ _APPENGINEROUTING = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="instance",
@@ -633,6 +701,7 @@ _APPENGINEROUTING = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="host",
@@ -651,6 +720,7 @@ _APPENGINEROUTING = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -672,6 +742,7 @@ _OAUTHTOKEN = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="service_account_email",
@@ -690,6 +761,7 @@ _OAUTHTOKEN = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="scope",
@@ -708,6 +780,7 @@ _OAUTHTOKEN = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -729,6 +802,7 @@ _OIDCTOKEN = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="service_account_email",
@@ -747,6 +821,7 @@ _OIDCTOKEN = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="audience",
@@ -765,6 +840,7 @@ _OIDCTOKEN = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
