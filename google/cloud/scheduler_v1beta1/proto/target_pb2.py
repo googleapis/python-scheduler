@@ -988,8 +988,8 @@ PubsubTarget = _reflection.GeneratedProtocolMessageType(
         ),
         "DESCRIPTOR": _PUBSUBTARGET,
         "__module__": "google.cloud.scheduler_v1beta1.proto.target_pb2",
-        "__doc__": """Pub/Sub target. The job will be delivered by publishing a
-  message to the given Pub/Sub topic.
+        "__doc__": """Pub/Sub target. The job will be delivered by publishing a message to the
+  given Pub/Sub topic.
   
   
   Attributes:
