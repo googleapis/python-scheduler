@@ -207,7 +207,7 @@ _GETJOBREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A#\n!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -368,7 +368,7 @@ _DELETEJOBREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A#\n!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -409,7 +409,7 @@ _PAUSEJOBREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A#\n!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -450,7 +450,7 @@ _RESUMEJOBREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A#\n!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -491,7 +491,7 @@ _RUNJOBREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A#\n!cloudscheduler.googleapis.com/Job",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],

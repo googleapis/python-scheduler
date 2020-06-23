@@ -373,7 +373,7 @@ _JOB = _descriptor.Descriptor(
     ],
     extensions=[],
     nested_types=[],
-    enum_types=[_JOB_STATE],
+    enum_types=[_JOB_STATE,],
     serialized_options=b"\352AW\n!cloudscheduler.googleapis.com/Job\0222projects/{project}/locations/{location}/jobs/{job}",
     is_extendable=False,
     syntax="proto3",
@@ -386,7 +386,7 @@ _JOB = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=266,
     serialized_end=1109,
