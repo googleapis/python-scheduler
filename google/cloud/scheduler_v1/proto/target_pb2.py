@@ -953,7 +953,7 @@ HttpTarget = _reflection.GeneratedProtocolMessageType(
           ers] field will be overridden.
       oauth_token:
           If specified, an `OAuth token
-          <https://developers.google.com/identity/protocols/OAuth2>`__
+          <https://developers.google.com/identity/protocols/OAuth2>`_\_
           will be generated and attached as an ``Authorization`` header
           in the HTTP request.  This type of authorization should
           generally only be used when calling Google APIs hosted on

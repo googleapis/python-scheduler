@@ -720,7 +720,7 @@ RetryConfig = _reflection.GeneratedProtocolMessageType(
           ax_backoff_duration] is 300s, and ``max_doublings`` is 3, then
           the a job will first be retried in 10s. The retry interval
           will double three times, and then increase linearly by 2^3 \*
-          10s. Finally, the job will retry at intervals of [max_backoff_
+          10s. Finally, the job will retry at intervals of [max_backoff\_
           duration][google.cloud.scheduler.v1.RetryConfig.max_backoff_du
           ration] until the job has been attempted [retry_count][google.
           cloud.scheduler.v1.RetryConfig.retry_count] times. Thus, the
