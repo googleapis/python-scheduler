@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -18,94 +17,67 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
-    name="google/cloud/scheduler_v1/proto/target.proto",
-    package="google.cloud.scheduler.v1",
-    syntax="proto3",
-    serialized_options=b"\n\035com.google.cloud.scheduler.v1B\013TargetProtoP\001ZBgoogle.golang.org/genproto/googleapis/cloud/scheduler/v1;scheduler\352A@\n\033pubsub.googleapis.com/Topic\022!projects/{project}/topics/{topic}",
-    create_key=_descriptor._internal_create_key,
-    serialized_pb=b'\n,google/cloud/scheduler_v1/proto/target.proto\x12\x19google.cloud.scheduler.v1\x1a\x19google/api/resource.proto\x1a\x1cgoogle/api/annotations.proto"\xea\x02\n\nHttpTarget\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12:\n\x0bhttp_method\x18\x02 \x01(\x0e\x32%.google.cloud.scheduler.v1.HttpMethod\x12\x43\n\x07headers\x18\x03 \x03(\x0b\x32\x32.google.cloud.scheduler.v1.HttpTarget.HeadersEntry\x12\x0c\n\x04\x62ody\x18\x04 \x01(\x0c\x12<\n\x0boauth_token\x18\x05 \x01(\x0b\x32%.google.cloud.scheduler.v1.OAuthTokenH\x00\x12:\n\noidc_token\x18\x06 \x01(\x0b\x32$.google.cloud.scheduler.v1.OidcTokenH\x00\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x16\n\x14\x61uthorization_header"\xbc\x02\n\x13\x41ppEngineHttpTarget\x12:\n\x0bhttp_method\x18\x01 \x01(\x0e\x32%.google.cloud.scheduler.v1.HttpMethod\x12G\n\x12\x61pp_engine_routing\x18\x02 \x01(\x0b\x32+.google.cloud.scheduler.v1.AppEngineRouting\x12\x14\n\x0crelative_uri\x18\x03 \x01(\t\x12L\n\x07headers\x18\x04 \x03(\x0b\x32;.google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry\x12\x0c\n\x04\x62ody\x18\x05 \x01(\x0c\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01"\xd2\x01\n\x0cPubsubTarget\x12\x34\n\ntopic_name\x18\x01 \x01(\tB \xfa\x41\x1d\n\x1bpubsub.googleapis.com/Topic\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x12K\n\nattributes\x18\x04 \x03(\x0b\x32\x37.google.cloud.scheduler.v1.PubsubTarget.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01"T\n\x10\x41ppEngineRouting\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x10\n\x08instance\x18\x03 \x01(\t\x12\x0c\n\x04host\x18\x04 \x01(\t":\n\nOAuthToken\x12\x1d\n\x15service_account_email\x18\x01 \x01(\t\x12\r\n\x05scope\x18\x02 \x01(\t"<\n\tOidcToken\x12\x1d\n\x15service_account_email\x18\x01 \x01(\t\x12\x10\n\x08\x61udience\x18\x02 \x01(\t*s\n\nHttpMethod\x12\x1b\n\x17HTTP_METHOD_UNSPECIFIED\x10\x00\x12\x08\n\x04POST\x10\x01\x12\x07\n\x03GET\x10\x02\x12\x08\n\x04HEAD\x10\x03\x12\x07\n\x03PUT\x10\x04\x12\n\n\x06\x44\x45LETE\x10\x05\x12\t\n\x05PATCH\x10\x06\x12\x0b\n\x07OPTIONS\x10\x07\x42\xb5\x01\n\x1d\x63om.google.cloud.scheduler.v1B\x0bTargetProtoP\x01ZBgoogle.golang.org/genproto/googleapis/cloud/scheduler/v1;scheduler\xea\x41@\n\x1bpubsub.googleapis.com/Topic\x12!projects/{project}/topics/{topic}b\x06proto3',
-    dependencies=[
-        google_dot_api_dot_resource__pb2.DESCRIPTOR,
-        google_dot_api_dot_annotations__pb2.DESCRIPTOR,
-    ],
-)
+  name='google/cloud/scheduler_v1/proto/target.proto',
+  package='google.cloud.scheduler.v1',
+  syntax='proto3',
+  serialized_options=b'\n\035com.google.cloud.scheduler.v1B\013TargetProtoP\001ZBgoogle.golang.org/genproto/googleapis/cloud/scheduler/v1;scheduler\352A@\n\033pubsub.googleapis.com/Topic\022!projects/{project}/topics/{topic}',
+  create_key=_descriptor._internal_create_key,
+  serialized_pb=b'\n,google/cloud/scheduler_v1/proto/target.proto\x12\x19google.cloud.scheduler.v1\x1a\x19google/api/resource.proto\x1a\x1cgoogle/api/annotations.proto\"\xea\x02\n\nHttpTarget\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12:\n\x0bhttp_method\x18\x02 \x01(\x0e\x32%.google.cloud.scheduler.v1.HttpMethod\x12\x43\n\x07headers\x18\x03 \x03(\x0b\x32\x32.google.cloud.scheduler.v1.HttpTarget.HeadersEntry\x12\x0c\n\x04\x62ody\x18\x04 \x01(\x0c\x12<\n\x0boauth_token\x18\x05 \x01(\x0b\x32%.google.cloud.scheduler.v1.OAuthTokenH\x00\x12:\n\noidc_token\x18\x06 \x01(\x0b\x32$.google.cloud.scheduler.v1.OidcTokenH\x00\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x16\n\x14\x61uthorization_header\"\xbc\x02\n\x13\x41ppEngineHttpTarget\x12:\n\x0bhttp_method\x18\x01 \x01(\x0e\x32%.google.cloud.scheduler.v1.HttpMethod\x12G\n\x12\x61pp_engine_routing\x18\x02 \x01(\x0b\x32+.google.cloud.scheduler.v1.AppEngineRouting\x12\x14\n\x0crelative_uri\x18\x03 \x01(\t\x12L\n\x07headers\x18\x04 \x03(\x0b\x32;.google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry\x12\x0c\n\x04\x62ody\x18\x05 \x01(\x0c\x1a.\n\x0cHeadersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd2\x01\n\x0cPubsubTarget\x12\x34\n\ntopic_name\x18\x01 \x01(\tB \xfa\x41\x1d\n\x1bpubsub.googleapis.com/Topic\x12\x0c\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x12K\n\nattributes\x18\x04 \x03(\x0b\x32\x37.google.cloud.scheduler.v1.PubsubTarget.AttributesEntry\x1a\x31\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"T\n\x10\x41ppEngineRouting\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x10\n\x08instance\x18\x03 \x01(\t\x12\x0c\n\x04host\x18\x04 \x01(\t\":\n\nOAuthToken\x12\x1d\n\x15service_account_email\x18\x01 \x01(\t\x12\r\n\x05scope\x18\x02 \x01(\t\"<\n\tOidcToken\x12\x1d\n\x15service_account_email\x18\x01 \x01(\t\x12\x10\n\x08\x61udience\x18\x02 \x01(\t*s\n\nHttpMethod\x12\x1b\n\x17HTTP_METHOD_UNSPECIFIED\x10\x00\x12\x08\n\x04POST\x10\x01\x12\x07\n\x03GET\x10\x02\x12\x08\n\x04HEAD\x10\x03\x12\x07\n\x03PUT\x10\x04\x12\n\n\x06\x44\x45LETE\x10\x05\x12\t\n\x05PATCH\x10\x06\x12\x0b\n\x07OPTIONS\x10\x07\x42\xb5\x01\n\x1d\x63om.google.cloud.scheduler.v1B\x0bTargetProtoP\x01ZBgoogle.golang.org/genproto/googleapis/cloud/scheduler/v1;scheduler\xea\x41@\n\x1bpubsub.googleapis.com/Topic\x12!projects/{project}/topics/{topic}b\x06proto3'
+  ,
+  dependencies=[google_dot_api_dot_resource__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
 _HTTPMETHOD = _descriptor.EnumDescriptor(
-    name="HttpMethod",
-    full_name="google.cloud.scheduler.v1.HttpMethod",
-    filename=None,
-    file=DESCRIPTOR,
-    create_key=_descriptor._internal_create_key,
-    values=[
-        _descriptor.EnumValueDescriptor(
-            name="HTTP_METHOD_UNSPECIFIED",
-            index=0,
-            number=0,
-            serialized_options=None,
-            type=None,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.EnumValueDescriptor(
-            name="POST",
-            index=1,
-            number=1,
-            serialized_options=None,
-            type=None,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.EnumValueDescriptor(
-            name="GET",
-            index=2,
-            number=2,
-            serialized_options=None,
-            type=None,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.EnumValueDescriptor(
-            name="HEAD",
-            index=3,
-            number=3,
-            serialized_options=None,
-            type=None,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.EnumValueDescriptor(
-            name="PUT",
-            index=4,
-            number=4,
-            serialized_options=None,
-            type=None,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.EnumValueDescriptor(
-            name="DELETE",
-            index=5,
-            number=5,
-            serialized_options=None,
-            type=None,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.EnumValueDescriptor(
-            name="PATCH",
-            index=6,
-            number=6,
-            serialized_options=None,
-            type=None,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.EnumValueDescriptor(
-            name="OPTIONS",
-            index=7,
-            number=7,
-            serialized_options=None,
-            type=None,
-            create_key=_descriptor._internal_create_key,
-        ),
-    ],
-    containing_type=None,
-    serialized_options=None,
-    serialized_start=1237,
-    serialized_end=1352,
+  name='HttpMethod',
+  full_name='google.cloud.scheduler.v1.HttpMethod',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='HTTP_METHOD_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='POST', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='GET', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='HEAD', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='PUT', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DELETE', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='PATCH', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='OPTIONS', index=7, number=7,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1237,
+  serialized_end=1352,
 )
 _sym_db.RegisterEnumDescriptor(_HTTPMETHOD)
 
@@ -120,793 +92,467 @@ PATCH = 6
 OPTIONS = 7
 
 
+
 _HTTPTARGET_HEADERSENTRY = _descriptor.Descriptor(
-    name="HeadersEntry",
-    full_name="google.cloud.scheduler.v1.HttpTarget.HeadersEntry",
-    filename=None,
-    file=DESCRIPTOR,
-    containing_type=None,
-    create_key=_descriptor._internal_create_key,
-    fields=[
-        _descriptor.FieldDescriptor(
-            name="key",
-            full_name="google.cloud.scheduler.v1.HttpTarget.HeadersEntry.key",
-            index=0,
-            number=1,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="value",
-            full_name="google.cloud.scheduler.v1.HttpTarget.HeadersEntry.value",
-            index=1,
-            number=2,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-    ],
-    extensions=[],
-    nested_types=[],
-    enum_types=[],
-    serialized_options=b"8\001",
-    is_extendable=False,
-    syntax="proto3",
-    extension_ranges=[],
-    oneofs=[],
-    serialized_start=425,
-    serialized_end=471,
+  name='HeadersEntry',
+  full_name='google.cloud.scheduler.v1.HttpTarget.HeadersEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='google.cloud.scheduler.v1.HttpTarget.HeadersEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='google.cloud.scheduler.v1.HttpTarget.HeadersEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=425,
+  serialized_end=471,
 )
 
 _HTTPTARGET = _descriptor.Descriptor(
-    name="HttpTarget",
-    full_name="google.cloud.scheduler.v1.HttpTarget",
-    filename=None,
-    file=DESCRIPTOR,
-    containing_type=None,
-    create_key=_descriptor._internal_create_key,
-    fields=[
-        _descriptor.FieldDescriptor(
-            name="uri",
-            full_name="google.cloud.scheduler.v1.HttpTarget.uri",
-            index=0,
-            number=1,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="http_method",
-            full_name="google.cloud.scheduler.v1.HttpTarget.http_method",
-            index=1,
-            number=2,
-            type=14,
-            cpp_type=8,
-            label=1,
-            has_default_value=False,
-            default_value=0,
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="headers",
-            full_name="google.cloud.scheduler.v1.HttpTarget.headers",
-            index=2,
-            number=3,
-            type=11,
-            cpp_type=10,
-            label=3,
-            has_default_value=False,
-            default_value=[],
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="body",
-            full_name="google.cloud.scheduler.v1.HttpTarget.body",
-            index=3,
-            number=4,
-            type=12,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"",
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="oauth_token",
-            full_name="google.cloud.scheduler.v1.HttpTarget.oauth_token",
-            index=4,
-            number=5,
-            type=11,
-            cpp_type=10,
-            label=1,
-            has_default_value=False,
-            default_value=None,
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="oidc_token",
-            full_name="google.cloud.scheduler.v1.HttpTarget.oidc_token",
-            index=5,
-            number=6,
-            type=11,
-            cpp_type=10,
-            label=1,
-            has_default_value=False,
-            default_value=None,
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-    ],
-    extensions=[],
-    nested_types=[_HTTPTARGET_HEADERSENTRY,],
-    enum_types=[],
-    serialized_options=None,
-    is_extendable=False,
-    syntax="proto3",
-    extension_ranges=[],
-    oneofs=[
-        _descriptor.OneofDescriptor(
-            name="authorization_header",
-            full_name="google.cloud.scheduler.v1.HttpTarget.authorization_header",
-            index=0,
-            containing_type=None,
-            create_key=_descriptor._internal_create_key,
-            fields=[],
-        ),
-    ],
-    serialized_start=133,
-    serialized_end=495,
+  name='HttpTarget',
+  full_name='google.cloud.scheduler.v1.HttpTarget',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='uri', full_name='google.cloud.scheduler.v1.HttpTarget.uri', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='http_method', full_name='google.cloud.scheduler.v1.HttpTarget.http_method', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='headers', full_name='google.cloud.scheduler.v1.HttpTarget.headers', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='body', full_name='google.cloud.scheduler.v1.HttpTarget.body', index=3,
+      number=4, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='oauth_token', full_name='google.cloud.scheduler.v1.HttpTarget.oauth_token', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='oidc_token', full_name='google.cloud.scheduler.v1.HttpTarget.oidc_token', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_HTTPTARGET_HEADERSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='authorization_header', full_name='google.cloud.scheduler.v1.HttpTarget.authorization_header',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=133,
+  serialized_end=495,
 )
 
 
 _APPENGINEHTTPTARGET_HEADERSENTRY = _descriptor.Descriptor(
-    name="HeadersEntry",
-    full_name="google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry",
-    filename=None,
-    file=DESCRIPTOR,
-    containing_type=None,
-    create_key=_descriptor._internal_create_key,
-    fields=[
-        _descriptor.FieldDescriptor(
-            name="key",
-            full_name="google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry.key",
-            index=0,
-            number=1,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="value",
-            full_name="google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry.value",
-            index=1,
-            number=2,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-    ],
-    extensions=[],
-    nested_types=[],
-    enum_types=[],
-    serialized_options=b"8\001",
-    is_extendable=False,
-    syntax="proto3",
-    extension_ranges=[],
-    oneofs=[],
-    serialized_start=425,
-    serialized_end=471,
+  name='HeadersEntry',
+  full_name='google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=425,
+  serialized_end=471,
 )
 
 _APPENGINEHTTPTARGET = _descriptor.Descriptor(
-    name="AppEngineHttpTarget",
-    full_name="google.cloud.scheduler.v1.AppEngineHttpTarget",
-    filename=None,
-    file=DESCRIPTOR,
-    containing_type=None,
-    create_key=_descriptor._internal_create_key,
-    fields=[
-        _descriptor.FieldDescriptor(
-            name="http_method",
-            full_name="google.cloud.scheduler.v1.AppEngineHttpTarget.http_method",
-            index=0,
-            number=1,
-            type=14,
-            cpp_type=8,
-            label=1,
-            has_default_value=False,
-            default_value=0,
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="app_engine_routing",
-            full_name="google.cloud.scheduler.v1.AppEngineHttpTarget.app_engine_routing",
-            index=1,
-            number=2,
-            type=11,
-            cpp_type=10,
-            label=1,
-            has_default_value=False,
-            default_value=None,
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="relative_uri",
-            full_name="google.cloud.scheduler.v1.AppEngineHttpTarget.relative_uri",
-            index=2,
-            number=3,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="headers",
-            full_name="google.cloud.scheduler.v1.AppEngineHttpTarget.headers",
-            index=3,
-            number=4,
-            type=11,
-            cpp_type=10,
-            label=3,
-            has_default_value=False,
-            default_value=[],
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="body",
-            full_name="google.cloud.scheduler.v1.AppEngineHttpTarget.body",
-            index=4,
-            number=5,
-            type=12,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"",
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-    ],
-    extensions=[],
-    nested_types=[_APPENGINEHTTPTARGET_HEADERSENTRY,],
-    enum_types=[],
-    serialized_options=None,
-    is_extendable=False,
-    syntax="proto3",
-    extension_ranges=[],
-    oneofs=[],
-    serialized_start=498,
-    serialized_end=814,
+  name='AppEngineHttpTarget',
+  full_name='google.cloud.scheduler.v1.AppEngineHttpTarget',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='http_method', full_name='google.cloud.scheduler.v1.AppEngineHttpTarget.http_method', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='app_engine_routing', full_name='google.cloud.scheduler.v1.AppEngineHttpTarget.app_engine_routing', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='relative_uri', full_name='google.cloud.scheduler.v1.AppEngineHttpTarget.relative_uri', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='headers', full_name='google.cloud.scheduler.v1.AppEngineHttpTarget.headers', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='body', full_name='google.cloud.scheduler.v1.AppEngineHttpTarget.body', index=4,
+      number=5, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_APPENGINEHTTPTARGET_HEADERSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=498,
+  serialized_end=814,
 )
 
 
 _PUBSUBTARGET_ATTRIBUTESENTRY = _descriptor.Descriptor(
-    name="AttributesEntry",
-    full_name="google.cloud.scheduler.v1.PubsubTarget.AttributesEntry",
-    filename=None,
-    file=DESCRIPTOR,
-    containing_type=None,
-    create_key=_descriptor._internal_create_key,
-    fields=[
-        _descriptor.FieldDescriptor(
-            name="key",
-            full_name="google.cloud.scheduler.v1.PubsubTarget.AttributesEntry.key",
-            index=0,
-            number=1,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="value",
-            full_name="google.cloud.scheduler.v1.PubsubTarget.AttributesEntry.value",
-            index=1,
-            number=2,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-    ],
-    extensions=[],
-    nested_types=[],
-    enum_types=[],
-    serialized_options=b"8\001",
-    is_extendable=False,
-    syntax="proto3",
-    extension_ranges=[],
-    oneofs=[],
-    serialized_start=978,
-    serialized_end=1027,
+  name='AttributesEntry',
+  full_name='google.cloud.scheduler.v1.PubsubTarget.AttributesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='google.cloud.scheduler.v1.PubsubTarget.AttributesEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='google.cloud.scheduler.v1.PubsubTarget.AttributesEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=978,
+  serialized_end=1027,
 )
 
 _PUBSUBTARGET = _descriptor.Descriptor(
-    name="PubsubTarget",
-    full_name="google.cloud.scheduler.v1.PubsubTarget",
-    filename=None,
-    file=DESCRIPTOR,
-    containing_type=None,
-    create_key=_descriptor._internal_create_key,
-    fields=[
-        _descriptor.FieldDescriptor(
-            name="topic_name",
-            full_name="google.cloud.scheduler.v1.PubsubTarget.topic_name",
-            index=0,
-            number=1,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=b"\372A\035\n\033pubsub.googleapis.com/Topic",
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="data",
-            full_name="google.cloud.scheduler.v1.PubsubTarget.data",
-            index=1,
-            number=3,
-            type=12,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"",
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="attributes",
-            full_name="google.cloud.scheduler.v1.PubsubTarget.attributes",
-            index=2,
-            number=4,
-            type=11,
-            cpp_type=10,
-            label=3,
-            has_default_value=False,
-            default_value=[],
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-    ],
-    extensions=[],
-    nested_types=[_PUBSUBTARGET_ATTRIBUTESENTRY,],
-    enum_types=[],
-    serialized_options=None,
-    is_extendable=False,
-    syntax="proto3",
-    extension_ranges=[],
-    oneofs=[],
-    serialized_start=817,
-    serialized_end=1027,
+  name='PubsubTarget',
+  full_name='google.cloud.scheduler.v1.PubsubTarget',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='topic_name', full_name='google.cloud.scheduler.v1.PubsubTarget.topic_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372A\035\n\033pubsub.googleapis.com/Topic', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='data', full_name='google.cloud.scheduler.v1.PubsubTarget.data', index=1,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"",
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='attributes', full_name='google.cloud.scheduler.v1.PubsubTarget.attributes', index=2,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_PUBSUBTARGET_ATTRIBUTESENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=817,
+  serialized_end=1027,
 )
 
 
 _APPENGINEROUTING = _descriptor.Descriptor(
-    name="AppEngineRouting",
-    full_name="google.cloud.scheduler.v1.AppEngineRouting",
-    filename=None,
-    file=DESCRIPTOR,
-    containing_type=None,
-    create_key=_descriptor._internal_create_key,
-    fields=[
-        _descriptor.FieldDescriptor(
-            name="service",
-            full_name="google.cloud.scheduler.v1.AppEngineRouting.service",
-            index=0,
-            number=1,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="version",
-            full_name="google.cloud.scheduler.v1.AppEngineRouting.version",
-            index=1,
-            number=2,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="instance",
-            full_name="google.cloud.scheduler.v1.AppEngineRouting.instance",
-            index=2,
-            number=3,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="host",
-            full_name="google.cloud.scheduler.v1.AppEngineRouting.host",
-            index=3,
-            number=4,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-    ],
-    extensions=[],
-    nested_types=[],
-    enum_types=[],
-    serialized_options=None,
-    is_extendable=False,
-    syntax="proto3",
-    extension_ranges=[],
-    oneofs=[],
-    serialized_start=1029,
-    serialized_end=1113,
+  name='AppEngineRouting',
+  full_name='google.cloud.scheduler.v1.AppEngineRouting',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='service', full_name='google.cloud.scheduler.v1.AppEngineRouting.service', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='version', full_name='google.cloud.scheduler.v1.AppEngineRouting.version', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='instance', full_name='google.cloud.scheduler.v1.AppEngineRouting.instance', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='host', full_name='google.cloud.scheduler.v1.AppEngineRouting.host', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1029,
+  serialized_end=1113,
 )
 
 
 _OAUTHTOKEN = _descriptor.Descriptor(
-    name="OAuthToken",
-    full_name="google.cloud.scheduler.v1.OAuthToken",
-    filename=None,
-    file=DESCRIPTOR,
-    containing_type=None,
-    create_key=_descriptor._internal_create_key,
-    fields=[
-        _descriptor.FieldDescriptor(
-            name="service_account_email",
-            full_name="google.cloud.scheduler.v1.OAuthToken.service_account_email",
-            index=0,
-            number=1,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="scope",
-            full_name="google.cloud.scheduler.v1.OAuthToken.scope",
-            index=1,
-            number=2,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-    ],
-    extensions=[],
-    nested_types=[],
-    enum_types=[],
-    serialized_options=None,
-    is_extendable=False,
-    syntax="proto3",
-    extension_ranges=[],
-    oneofs=[],
-    serialized_start=1115,
-    serialized_end=1173,
+  name='OAuthToken',
+  full_name='google.cloud.scheduler.v1.OAuthToken',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='service_account_email', full_name='google.cloud.scheduler.v1.OAuthToken.service_account_email', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='scope', full_name='google.cloud.scheduler.v1.OAuthToken.scope', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1115,
+  serialized_end=1173,
 )
 
 
 _OIDCTOKEN = _descriptor.Descriptor(
-    name="OidcToken",
-    full_name="google.cloud.scheduler.v1.OidcToken",
-    filename=None,
-    file=DESCRIPTOR,
-    containing_type=None,
-    create_key=_descriptor._internal_create_key,
-    fields=[
-        _descriptor.FieldDescriptor(
-            name="service_account_email",
-            full_name="google.cloud.scheduler.v1.OidcToken.service_account_email",
-            index=0,
-            number=1,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-        _descriptor.FieldDescriptor(
-            name="audience",
-            full_name="google.cloud.scheduler.v1.OidcToken.audience",
-            index=1,
-            number=2,
-            type=9,
-            cpp_type=9,
-            label=1,
-            has_default_value=False,
-            default_value=b"".decode("utf-8"),
-            message_type=None,
-            enum_type=None,
-            containing_type=None,
-            is_extension=False,
-            extension_scope=None,
-            serialized_options=None,
-            file=DESCRIPTOR,
-            create_key=_descriptor._internal_create_key,
-        ),
-    ],
-    extensions=[],
-    nested_types=[],
-    enum_types=[],
-    serialized_options=None,
-    is_extendable=False,
-    syntax="proto3",
-    extension_ranges=[],
-    oneofs=[],
-    serialized_start=1175,
-    serialized_end=1235,
+  name='OidcToken',
+  full_name='google.cloud.scheduler.v1.OidcToken',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='service_account_email', full_name='google.cloud.scheduler.v1.OidcToken.service_account_email', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='audience', full_name='google.cloud.scheduler.v1.OidcToken.audience', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1175,
+  serialized_end=1235,
 )
 
 _HTTPTARGET_HEADERSENTRY.containing_type = _HTTPTARGET
-_HTTPTARGET.fields_by_name["http_method"].enum_type = _HTTPMETHOD
-_HTTPTARGET.fields_by_name["headers"].message_type = _HTTPTARGET_HEADERSENTRY
-_HTTPTARGET.fields_by_name["oauth_token"].message_type = _OAUTHTOKEN
-_HTTPTARGET.fields_by_name["oidc_token"].message_type = _OIDCTOKEN
-_HTTPTARGET.oneofs_by_name["authorization_header"].fields.append(
-    _HTTPTARGET.fields_by_name["oauth_token"]
-)
-_HTTPTARGET.fields_by_name["oauth_token"].containing_oneof = _HTTPTARGET.oneofs_by_name[
-    "authorization_header"
-]
-_HTTPTARGET.oneofs_by_name["authorization_header"].fields.append(
-    _HTTPTARGET.fields_by_name["oidc_token"]
-)
-_HTTPTARGET.fields_by_name["oidc_token"].containing_oneof = _HTTPTARGET.oneofs_by_name[
-    "authorization_header"
-]
+_HTTPTARGET.fields_by_name['http_method'].enum_type = _HTTPMETHOD
+_HTTPTARGET.fields_by_name['headers'].message_type = _HTTPTARGET_HEADERSENTRY
+_HTTPTARGET.fields_by_name['oauth_token'].message_type = _OAUTHTOKEN
+_HTTPTARGET.fields_by_name['oidc_token'].message_type = _OIDCTOKEN
+_HTTPTARGET.oneofs_by_name['authorization_header'].fields.append(
+  _HTTPTARGET.fields_by_name['oauth_token'])
+_HTTPTARGET.fields_by_name['oauth_token'].containing_oneof = _HTTPTARGET.oneofs_by_name['authorization_header']
+_HTTPTARGET.oneofs_by_name['authorization_header'].fields.append(
+  _HTTPTARGET.fields_by_name['oidc_token'])
+_HTTPTARGET.fields_by_name['oidc_token'].containing_oneof = _HTTPTARGET.oneofs_by_name['authorization_header']
 _APPENGINEHTTPTARGET_HEADERSENTRY.containing_type = _APPENGINEHTTPTARGET
-_APPENGINEHTTPTARGET.fields_by_name["http_method"].enum_type = _HTTPMETHOD
-_APPENGINEHTTPTARGET.fields_by_name[
-    "app_engine_routing"
-].message_type = _APPENGINEROUTING
-_APPENGINEHTTPTARGET.fields_by_name[
-    "headers"
-].message_type = _APPENGINEHTTPTARGET_HEADERSENTRY
+_APPENGINEHTTPTARGET.fields_by_name['http_method'].enum_type = _HTTPMETHOD
+_APPENGINEHTTPTARGET.fields_by_name['app_engine_routing'].message_type = _APPENGINEROUTING
+_APPENGINEHTTPTARGET.fields_by_name['headers'].message_type = _APPENGINEHTTPTARGET_HEADERSENTRY
 _PUBSUBTARGET_ATTRIBUTESENTRY.containing_type = _PUBSUBTARGET
-_PUBSUBTARGET.fields_by_name["attributes"].message_type = _PUBSUBTARGET_ATTRIBUTESENTRY
-DESCRIPTOR.message_types_by_name["HttpTarget"] = _HTTPTARGET
-DESCRIPTOR.message_types_by_name["AppEngineHttpTarget"] = _APPENGINEHTTPTARGET
-DESCRIPTOR.message_types_by_name["PubsubTarget"] = _PUBSUBTARGET
-DESCRIPTOR.message_types_by_name["AppEngineRouting"] = _APPENGINEROUTING
-DESCRIPTOR.message_types_by_name["OAuthToken"] = _OAUTHTOKEN
-DESCRIPTOR.message_types_by_name["OidcToken"] = _OIDCTOKEN
-DESCRIPTOR.enum_types_by_name["HttpMethod"] = _HTTPMETHOD
+_PUBSUBTARGET.fields_by_name['attributes'].message_type = _PUBSUBTARGET_ATTRIBUTESENTRY
+DESCRIPTOR.message_types_by_name['HttpTarget'] = _HTTPTARGET
+DESCRIPTOR.message_types_by_name['AppEngineHttpTarget'] = _APPENGINEHTTPTARGET
+DESCRIPTOR.message_types_by_name['PubsubTarget'] = _PUBSUBTARGET
+DESCRIPTOR.message_types_by_name['AppEngineRouting'] = _APPENGINEROUTING
+DESCRIPTOR.message_types_by_name['OAuthToken'] = _OAUTHTOKEN
+DESCRIPTOR.message_types_by_name['OidcToken'] = _OIDCTOKEN
+DESCRIPTOR.enum_types_by_name['HttpMethod'] = _HTTPMETHOD
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-HttpTarget = _reflection.GeneratedProtocolMessageType(
-    "HttpTarget",
-    (_message.Message,),
-    {
-        "HeadersEntry": _reflection.GeneratedProtocolMessageType(
-            "HeadersEntry",
-            (_message.Message,),
-            {
-                "DESCRIPTOR": _HTTPTARGET_HEADERSENTRY,
-                "__module__": "google.cloud.scheduler_v1.proto.target_pb2"
-                # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.HttpTarget.HeadersEntry)
-            },
-        ),
-        "DESCRIPTOR": _HTTPTARGET,
-        "__module__": "google.cloud.scheduler_v1.proto.target_pb2",
-        "__doc__": """Http target. The job will be pushed to the job handler by means of an
+HttpTarget = _reflection.GeneratedProtocolMessageType('HttpTarget', (_message.Message,), {
+
+  'HeadersEntry' : _reflection.GeneratedProtocolMessageType('HeadersEntry', (_message.Message,), {
+    'DESCRIPTOR' : _HTTPTARGET_HEADERSENTRY,
+    '__module__' : 'google.cloud.scheduler_v1.proto.target_pb2'
+    # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.HttpTarget.HeadersEntry)
+    })
+  ,
+  'DESCRIPTOR' : _HTTPTARGET,
+  '__module__' : 'google.cloud.scheduler_v1.proto.target_pb2'
+  ,
+  '__doc__': """Http target. The job will be pushed to the job handler by means of an
   HTTP request via an
   [http_method][google.cloud.scheduler.v1.HttpTarget.http_method] such
   as HTTP POST, HTTP GET, etc. The job is acknowledged by means of an
@@ -953,7 +599,7 @@ HttpTarget = _reflection.GeneratedProtocolMessageType(
           ers] field will be overridden.
       oauth_token:
           If specified, an `OAuth token
-          <https://developers.google.com/identity/protocols/OAuth2>`_\_
+          <https://developers.google.com/identity/protocols/OAuth2>`__
           will be generated and attached as an ``Authorization`` header
           in the HTTP request.  This type of authorization should
           generally only be used when calling Google APIs hosted on
@@ -966,28 +612,23 @@ HttpTarget = _reflection.GeneratedProtocolMessageType(
           including calling Cloud Run, or endpoints where you intend to
           validate the token yourself.
   """,
-        # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.HttpTarget)
-    },
-)
+  # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.HttpTarget)
+  })
 _sym_db.RegisterMessage(HttpTarget)
 _sym_db.RegisterMessage(HttpTarget.HeadersEntry)
 
-AppEngineHttpTarget = _reflection.GeneratedProtocolMessageType(
-    "AppEngineHttpTarget",
-    (_message.Message,),
-    {
-        "HeadersEntry": _reflection.GeneratedProtocolMessageType(
-            "HeadersEntry",
-            (_message.Message,),
-            {
-                "DESCRIPTOR": _APPENGINEHTTPTARGET_HEADERSENTRY,
-                "__module__": "google.cloud.scheduler_v1.proto.target_pb2"
-                # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry)
-            },
-        ),
-        "DESCRIPTOR": _APPENGINEHTTPTARGET,
-        "__module__": "google.cloud.scheduler_v1.proto.target_pb2",
-        "__doc__": """App Engine target. The job will be pushed to a job handler by means of
+AppEngineHttpTarget = _reflection.GeneratedProtocolMessageType('AppEngineHttpTarget', (_message.Message,), {
+
+  'HeadersEntry' : _reflection.GeneratedProtocolMessageType('HeadersEntry', (_message.Message,), {
+    'DESCRIPTOR' : _APPENGINEHTTPTARGET_HEADERSENTRY,
+    '__module__' : 'google.cloud.scheduler_v1.proto.target_pb2'
+    # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.AppEngineHttpTarget.HeadersEntry)
+    })
+  ,
+  'DESCRIPTOR' : _APPENGINEHTTPTARGET,
+  '__module__' : 'google.cloud.scheduler_v1.proto.target_pb2'
+  ,
+  '__doc__': """App Engine target. The job will be pushed to a job handler by means of
   an HTTP request via an [http_method][google.cloud.scheduler.v1.AppEngi
   neHttpTarget.http_method] such as HTTP POST, HTTP GET, etc. The job is
   acknowledged by means of an HTTP response code in the range [200 -
@@ -1040,28 +681,23 @@ AppEngineHttpTarget = _reflection.GeneratedProtocolMessageType(
           argument error to set a body on a job with an incompatible
           [HttpMethod][google.cloud.scheduler.v1.HttpMethod].
   """,
-        # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.AppEngineHttpTarget)
-    },
-)
+  # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.AppEngineHttpTarget)
+  })
 _sym_db.RegisterMessage(AppEngineHttpTarget)
 _sym_db.RegisterMessage(AppEngineHttpTarget.HeadersEntry)
 
-PubsubTarget = _reflection.GeneratedProtocolMessageType(
-    "PubsubTarget",
-    (_message.Message,),
-    {
-        "AttributesEntry": _reflection.GeneratedProtocolMessageType(
-            "AttributesEntry",
-            (_message.Message,),
-            {
-                "DESCRIPTOR": _PUBSUBTARGET_ATTRIBUTESENTRY,
-                "__module__": "google.cloud.scheduler_v1.proto.target_pb2"
-                # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.PubsubTarget.AttributesEntry)
-            },
-        ),
-        "DESCRIPTOR": _PUBSUBTARGET,
-        "__module__": "google.cloud.scheduler_v1.proto.target_pb2",
-        "__doc__": """Pub/Sub target. The job will be delivered by publishing a message to
+PubsubTarget = _reflection.GeneratedProtocolMessageType('PubsubTarget', (_message.Message,), {
+
+  'AttributesEntry' : _reflection.GeneratedProtocolMessageType('AttributesEntry', (_message.Message,), {
+    'DESCRIPTOR' : _PUBSUBTARGET_ATTRIBUTESENTRY,
+    '__module__' : 'google.cloud.scheduler_v1.proto.target_pb2'
+    # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.PubsubTarget.AttributesEntry)
+    })
+  ,
+  'DESCRIPTOR' : _PUBSUBTARGET,
+  '__module__' : 'google.cloud.scheduler_v1.proto.target_pb2'
+  ,
+  '__doc__': """Pub/Sub target. The job will be delivered by publishing a message to
   the given Pub/Sub topic.
   
   Attributes:
@@ -1080,19 +716,16 @@ PubsubTarget = _reflection.GeneratedProtocolMessageType(
           Attributes for PubsubMessage.  Pubsub message must contain
           either non-empty data, or at least one attribute.
   """,
-        # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.PubsubTarget)
-    },
-)
+  # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.PubsubTarget)
+  })
 _sym_db.RegisterMessage(PubsubTarget)
 _sym_db.RegisterMessage(PubsubTarget.AttributesEntry)
 
-AppEngineRouting = _reflection.GeneratedProtocolMessageType(
-    "AppEngineRouting",
-    (_message.Message,),
-    {
-        "DESCRIPTOR": _APPENGINEROUTING,
-        "__module__": "google.cloud.scheduler_v1.proto.target_pb2",
-        "__doc__": """App Engine Routing.  For more information about services, versions,
+AppEngineRouting = _reflection.GeneratedProtocolMessageType('AppEngineRouting', (_message.Message,), {
+  'DESCRIPTOR' : _APPENGINEROUTING,
+  '__module__' : 'google.cloud.scheduler_v1.proto.target_pb2'
+  ,
+  '__doc__': """App Engine Routing.  For more information about services, versions,
   and instances see `An Overview of App Engine
   <https://cloud.google.com/appengine/docs/python/an-overview-of-app-
   engine>`__, `Microservices Architecture on Google App Engine
@@ -1176,18 +809,15 @@ AppEngineRouting = _reflection.GeneratedProtocolMessageType(
           nce] is invalid, then the job will be sent to the default
           version of the default service when the job is attempted.
   """,
-        # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.AppEngineRouting)
-    },
-)
+  # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.AppEngineRouting)
+  })
 _sym_db.RegisterMessage(AppEngineRouting)
 
-OAuthToken = _reflection.GeneratedProtocolMessageType(
-    "OAuthToken",
-    (_message.Message,),
-    {
-        "DESCRIPTOR": _OAUTHTOKEN,
-        "__module__": "google.cloud.scheduler_v1.proto.target_pb2",
-        "__doc__": """Contains information needed for generating an `OAuth token
+OAuthToken = _reflection.GeneratedProtocolMessageType('OAuthToken', (_message.Message,), {
+  'DESCRIPTOR' : _OAUTHTOKEN,
+  '__module__' : 'google.cloud.scheduler_v1.proto.target_pb2'
+  ,
+  '__doc__': """Contains information needed for generating an `OAuth token
   <https://developers.google.com/identity/protocols/OAuth2>`__. This
   type of authorization should generally only be used when calling
   Google APIs hosted on \*.googleapis.com.
@@ -1204,18 +834,15 @@ OAuthToken = _reflection.GeneratedProtocolMessageType(
           not specified, “https://www.googleapis.com/auth/cloud-
           platform” will be used.
   """,
-        # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.OAuthToken)
-    },
-)
+  # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.OAuthToken)
+  })
 _sym_db.RegisterMessage(OAuthToken)
 
-OidcToken = _reflection.GeneratedProtocolMessageType(
-    "OidcToken",
-    (_message.Message,),
-    {
-        "DESCRIPTOR": _OIDCTOKEN,
-        "__module__": "google.cloud.scheduler_v1.proto.target_pb2",
-        "__doc__": """Contains information needed for generating an `OpenID Connect token
+OidcToken = _reflection.GeneratedProtocolMessageType('OidcToken', (_message.Message,), {
+  'DESCRIPTOR' : _OIDCTOKEN,
+  '__module__' : 'google.cloud.scheduler_v1.proto.target_pb2'
+  ,
+  '__doc__': """Contains information needed for generating an `OpenID Connect token
   <https://developers.google.com/identity/protocols/OpenIDConnect>`__.
   This type of authorization can be used for many scenarios, including
   calling Cloud Run, or endpoints where you intend to validate the token
@@ -1232,9 +859,8 @@ OidcToken = _reflection.GeneratedProtocolMessageType(
           Audience to be used when generating OIDC token. If not
           specified, the URI specified in target will be used.
   """,
-        # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.OidcToken)
-    },
-)
+  # @@protoc_insertion_point(class_scope:google.cloud.scheduler.v1.OidcToken)
+  })
 _sym_db.RegisterMessage(OidcToken)
 
 
@@ -1242,5 +868,5 @@ DESCRIPTOR._options = None
 _HTTPTARGET_HEADERSENTRY._options = None
 _APPENGINEHTTPTARGET_HEADERSENTRY._options = None
 _PUBSUBTARGET_ATTRIBUTESENTRY._options = None
-_PUBSUBTARGET.fields_by_name["topic_name"]._options = None
+_PUBSUBTARGET.fields_by_name['topic_name']._options = None
 # @@protoc_insertion_point(module_scope)
