@@ -4,6 +4,13 @@
 
 [1]: https://pypi.org/project/google-cloud-scheduler/#history
 
+### [1.3.1](https://www.github.com/googleapis/python-scheduler/compare/v1.3.0...v1.3.1) (2020-08-20)
+
+
+### Bug Fixes
+
+* update retry configs ([#20](https://www.github.com/googleapis/python-scheduler/issues/20)) ([7f82c9f](https://www.github.com/googleapis/python-scheduler/commit/7f82c9ffc292d72907de66bf6d5fa39e38d26085))
+
 ## [1.3.0](https://www.github.com/googleapis/python-scheduler/compare/v1.2.1...v1.3.0) (2020-04-21)
 
 
