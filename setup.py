@@ -45,7 +45,9 @@ with io.open(readme_filename, encoding="utf-8") as readme_file:
 # Only include packages under the 'google' namespace. Do not include tests,
 # benchmarks, etc.
 packages = [
-    package for package in setuptools.PEP420PackageFinder.find() if package.startswith("google")
+    package
+    for package in setuptools.PEP420PackageFinder.find()
+    if package.startswith("google")
 ]
 
 # Determine which namespaces are needed.
@@ -83,6 +85,6 @@ setuptools.setup(
     zip_safe=False,
     scripts=[
         "scripts/fixup_scheduler_v1_keywords.py",
-        "scripts/fixup_scheduler_v1beta1_keywords.py"
+        "scripts/fixup_scheduler_v1beta1_keywords.py",
     ],
 )
