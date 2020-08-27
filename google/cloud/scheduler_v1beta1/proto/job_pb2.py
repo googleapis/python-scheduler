@@ -717,7 +717,7 @@ RetryConfig = _reflection.GeneratedProtocolMessageType(
           ion][google.cloud.scheduler.v1beta1.RetryConfig.max_backoff_du
           ration] up to [retry_count][google.cloud.scheduler.v1beta1.Ret
           ryConfig.retry_count] times.  For example, if [min_backoff_dur
-          ation][google.cloud.scheduler.v1beta1.RetryConfig.min_backoff\_
+          ation][google.cloud.scheduler.v1beta1.RetryConfig.min_backoff\\_
           duration] is 10s, [max_backoff_duration][google.cloud.schedule
           r.v1beta1.RetryConfig.max_backoff_duration] is 300s, and
           ``max_doublings`` is 3, then the a job will first be retried
