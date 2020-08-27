@@ -141,7 +141,7 @@ This call is invalid because it mixes `request` with a keyword argument `metadat
 will result in an error.
 
 ```py
-response = client.synthesize_speech(
+response = client.list_jobs(
     request={
         "parent": parent,
         "timeout": timeout,
