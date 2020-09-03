@@ -38,7 +38,7 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
 
-from .transports.base import CloudSchedulerTransport
+from .transports.base import CloudSchedulerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import CloudSchedulerGrpcAsyncIOTransport
 from .client import CloudSchedulerClient
 
@@ -68,6 +68,7 @@ class CloudSchedulerAsyncClient:
         credentials: credentials.Credentials = None,
         transport: Union[str, CloudSchedulerTransport] = "grpc_asyncio",
         client_options: ClientOptions = None,
+        client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
         """Instantiate the cloud scheduler client.
 
@@ -100,7 +101,10 @@ class CloudSchedulerAsyncClient:
         """
 
         self._client = CloudSchedulerClient(
-            credentials=credentials, transport=transport, client_options=client_options,
+            credentials=credentials,
+            transport=transport,
+            client_options=client_options,
+            client_info=client_info,
         )
 
     async def list_jobs(
@@ -171,7 +175,7 @@ class CloudSchedulerAsyncClient:
                 ),
             ),
             default_timeout=600.0,
-            client_info=_client_info,
+            client_info=DEFAULT_CLIENT_INFO,
         )
 
         # Certain fields should be provided within the metadata header;
@@ -257,7 +261,7 @@ class CloudSchedulerAsyncClient:
                 ),
             ),
             default_timeout=600.0,
-            client_info=_client_info,
+            client_info=DEFAULT_CLIENT_INFO,
         )
 
         # Certain fields should be provided within the metadata header;
@@ -345,7 +349,7 @@ class CloudSchedulerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.create_job,
             default_timeout=600.0,
-            client_info=_client_info,
+            client_info=DEFAULT_CLIENT_INFO,
         )
 
         # Certain fields should be provided within the metadata header;
@@ -442,7 +446,7 @@ class CloudSchedulerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.update_job,
             default_timeout=600.0,
-            client_info=_client_info,
+            client_info=DEFAULT_CLIENT_INFO,
         )
 
         # Certain fields should be provided within the metadata header;
@@ -516,7 +520,7 @@ class CloudSchedulerAsyncClient:
                 ),
             ),
             default_timeout=600.0,
-            client_info=_client_info,
+            client_info=DEFAULT_CLIENT_INFO,
         )
 
         # Certain fields should be provided within the metadata header;
@@ -606,7 +610,7 @@ class CloudSchedulerAsyncClient:
                 ),
             ),
             default_timeout=600.0,
-            client_info=_client_info,
+            client_info=DEFAULT_CLIENT_INFO,
         )
 
         # Certain fields should be provided within the metadata header;
@@ -696,7 +700,7 @@ class CloudSchedulerAsyncClient:
                 ),
             ),
             default_timeout=600.0,
-            client_info=_client_info,
+            client_info=DEFAULT_CLIENT_INFO,
         )
 
         # Certain fields should be provided within the metadata header;
@@ -771,7 +775,7 @@ class CloudSchedulerAsyncClient:
         rpc = gapic_v1.method_async.wrap_method(
             self._client._transport.run_job,
             default_timeout=600.0,
-            client_info=_client_info,
+            client_info=DEFAULT_CLIENT_INFO,
         )
 
         # Certain fields should be provided within the metadata header;
@@ -788,11 +792,11 @@ class CloudSchedulerAsyncClient:
 
 
 try:
-    _client_info = gapic_v1.client_info.ClientInfo(
+    DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution("google-cloud-scheduler",).version,
     )
 except pkg_resources.DistributionNotFound:
-    _client_info = gapic_v1.client_info.ClientInfo()
+    DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
 
 __all__ = ("CloudSchedulerAsyncClient",)

@@ -40,7 +40,7 @@ from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
 
-from .transports.base import CloudSchedulerTransport
+from .transports.base import CloudSchedulerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CloudSchedulerGrpcTransport
 from .transports.grpc_asyncio import CloudSchedulerGrpcAsyncIOTransport
 
@@ -159,6 +159,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         credentials: credentials.Credentials = None,
         transport: Union[str, CloudSchedulerTransport] = None,
         client_options: ClientOptions = None,
+        client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
         """Instantiate the cloud scheduler client.
 
@@ -184,6 +185,11 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
                 (2) The ``client_cert_source`` property is used to provide client
                 SSL credentials for mutual TLS transport. If not provided, the
                 default SSL credentials will be used if present.
+            client_info (google.api_core.gapic_v1.client_info.ClientInfo):	
+                The client info used to send a user-agent string along with	
+                API requests. If ``None``, then default info will be used.	
+                Generally, you only need to set this if you're developing	
+                your own client library.
 
         Raises:
             google.auth.exceptions.MutualTLSChannelError: If mutual TLS transport
@@ -241,6 +247,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
                 api_mtls_endpoint=client_options.api_endpoint,
                 client_cert_source=client_options.client_cert_source,
                 quota_project_id=client_options.quota_project_id,
+                client_info=client_info,
             )
 
     def list_jobs(
@@ -904,11 +911,11 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
 
 try:
-    _client_info = gapic_v1.client_info.ClientInfo(
+    DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
         gapic_version=pkg_resources.get_distribution("google-cloud-scheduler",).version,
     )
 except pkg_resources.DistributionNotFound:
-    _client_info = gapic_v1.client_info.ClientInfo()
+    DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
 
 __all__ = ("CloudSchedulerClient",)
