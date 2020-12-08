@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-scheduler.git",
-        "sha": "d0bed6d49071b486176561f05ca8e8c22547c097"
+        "sha": "f9fc0f9613302de642680c87286de0a02f09d086"
       }
     },
     {
@@ -19,14 +19,14 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "2e85c10b5153defd9d654c34b57e7e9263361959"
+        "sha": "d91dd8aac77f7a9c5506c238038a26fa4f9e361e"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "2e85c10b5153defd9d654c34b57e7e9263361959"
+        "sha": "d91dd8aac77f7a9c5506c238038a26fa4f9e361e"
       }
     }
   ],
@@ -58,6 +58,7 @@
     ".github/ISSUE_TEMPLATE/support_request.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/release-please.yml",
+    ".github/snippet-bot.yml",
     ".gitignore",
     ".kokoro/build.sh",
     ".kokoro/continuous/common.cfg",
