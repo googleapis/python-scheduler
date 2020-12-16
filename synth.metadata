@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-scheduler.git",
-        "sha": "f9fc0f9613302de642680c87286de0a02f09d086"
+        "sha": "1c8765708716f2876ad86b49c950a2eec6efb63f"
       }
     },
     {
@@ -19,14 +19,14 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "18c5dbdb4ac8cf75d4d8174e7b4558f48e76f8a1"
+        "sha": "aa255b15d52b6d8950cca48cfdf58f7d27a60c8a"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "18c5dbdb4ac8cf75d4d8174e7b4558f48e76f8a1"
+        "sha": "aa255b15d52b6d8950cca48cfdf58f7d27a60c8a"
       }
     }
   ],
