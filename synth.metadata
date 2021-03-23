@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-scheduler.git",
-        "sha": "d2313380214ad7d2ec30dfb5f45bc369dd6cd5be"
+        "sha": "167ce59bbc4e7a05b8110768ee737b16a439b5a6"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "dd372aa22ded7a8ba6f0e03a80e06358a3fa0907",
-        "internalRef": "347055288"
+        "sha": "20712b8fe95001b312f62c6c5f33e3e3ec92cfaf",
+        "internalRef": "354996675"
       }
     },
     {
@@ -51,6 +51,7 @@
     }
   ],
   "generatedFiles": [
+    ".coveragerc",
     ".flake8",
     ".github/CONTRIBUTING.md",
     ".github/ISSUE_TEMPLATE/bug_report.md",
@@ -104,8 +105,10 @@
     "docs/_templates/layout.html",
     "docs/conf.py",
     "docs/multiprocessing.rst",
+    "docs/scheduler_v1/cloud_scheduler.rst",
     "docs/scheduler_v1/services.rst",
     "docs/scheduler_v1/types.rst",
+    "docs/scheduler_v1beta1/cloud_scheduler.rst",
     "docs/scheduler_v1beta1/services.rst",
     "docs/scheduler_v1beta1/types.rst",
     "google/cloud/scheduler/__init__.py",
