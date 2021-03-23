@@ -248,6 +248,7 @@ class CloudSchedulerAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -336,6 +337,7 @@ class CloudSchedulerAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -603,6 +605,7 @@ class CloudSchedulerAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -695,6 +698,7 @@ class CloudSchedulerAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
@@ -787,6 +791,7 @@ class CloudSchedulerAsyncClient:
                 predicate=retries.if_exception_type(
                     exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
                 ),
+                deadline=600.0,
             ),
             default_timeout=600.0,
             client_info=DEFAULT_CLIENT_INFO,
