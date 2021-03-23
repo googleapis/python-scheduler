@@ -94,15 +94,19 @@ def test__get_default_mtls_endpoint():
     )
 
 
-def test_cloud_scheduler_client_from_service_account_info():
+@pytest.mark.parametrize(
+    "client_class", [CloudSchedulerClient, CloudSchedulerAsyncClient,]
+)
+def test_cloud_scheduler_client_from_service_account_info(client_class):
     creds = credentials.AnonymousCredentials()
     with mock.patch.object(
         service_account.Credentials, "from_service_account_info"
     ) as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = CloudSchedulerClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == "cloudscheduler.googleapis.com:443"
 
@@ -118,9 +122,11 @@ def test_cloud_scheduler_client_from_service_account_file(client_class):
         factory.return_value = creds
         client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == "cloudscheduler.googleapis.com:443"
 
@@ -483,6 +489,22 @@ def test_list_jobs_from_dict():
     test_list_jobs(request_type=dict)
 
 
+def test_list_jobs_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudSchedulerClient(
+        credentials=credentials.AnonymousCredentials(), transport="grpc",
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(type(client.transport.list_jobs), "__call__") as call:
+        client.list_jobs()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudscheduler.ListJobsRequest()
+
+
 @pytest.mark.asyncio
 async def test_list_jobs_async(
     transport: str = "grpc_asyncio", request_type=cloudscheduler.ListJobsRequest
@@ -789,6 +811,22 @@ def test_get_job_from_dict():
     test_get_job(request_type=dict)
 
 
+def test_get_job_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudSchedulerClient(
+        credentials=credentials.AnonymousCredentials(), transport="grpc",
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(type(client.transport.get_job), "__call__") as call:
+        client.get_job()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudscheduler.GetJobRequest()
+
+
 @pytest.mark.asyncio
 async def test_get_job_async(
     transport: str = "grpc_asyncio", request_type=cloudscheduler.GetJobRequest
@@ -1003,6 +1041,22 @@ def test_create_job(
 
 def test_create_job_from_dict():
     test_create_job(request_type=dict)
+
+
+def test_create_job_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudSchedulerClient(
+        credentials=credentials.AnonymousCredentials(), transport="grpc",
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(type(client.transport.create_job), "__call__") as call:
+        client.create_job()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudscheduler.CreateJobRequest()
 
 
 @pytest.mark.asyncio
@@ -1233,6 +1287,22 @@ def test_update_job_from_dict():
     test_update_job(request_type=dict)
 
 
+def test_update_job_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudSchedulerClient(
+        credentials=credentials.AnonymousCredentials(), transport="grpc",
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(type(client.transport.update_job), "__call__") as call:
+        client.update_job()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudscheduler.UpdateJobRequest()
+
+
 @pytest.mark.asyncio
 async def test_update_job_async(
     transport: str = "grpc_asyncio", request_type=cloudscheduler.UpdateJobRequest
@@ -1445,6 +1515,22 @@ def test_delete_job_from_dict():
     test_delete_job(request_type=dict)
 
 
+def test_delete_job_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudSchedulerClient(
+        credentials=credentials.AnonymousCredentials(), transport="grpc",
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(type(client.transport.delete_job), "__call__") as call:
+        client.delete_job()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudscheduler.DeleteJobRequest()
+
+
 @pytest.mark.asyncio
 async def test_delete_job_async(
     transport: str = "grpc_asyncio", request_type=cloudscheduler.DeleteJobRequest
@@ -1641,6 +1727,22 @@ def test_pause_job(
 
 def test_pause_job_from_dict():
     test_pause_job(request_type=dict)
+
+
+def test_pause_job_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudSchedulerClient(
+        credentials=credentials.AnonymousCredentials(), transport="grpc",
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(type(client.transport.pause_job), "__call__") as call:
+        client.pause_job()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudscheduler.PauseJobRequest()
 
 
 @pytest.mark.asyncio
@@ -1859,6 +1961,22 @@ def test_resume_job_from_dict():
     test_resume_job(request_type=dict)
 
 
+def test_resume_job_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudSchedulerClient(
+        credentials=credentials.AnonymousCredentials(), transport="grpc",
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(type(client.transport.resume_job), "__call__") as call:
+        client.resume_job()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudscheduler.ResumeJobRequest()
+
+
 @pytest.mark.asyncio
 async def test_resume_job_async(
     transport: str = "grpc_asyncio", request_type=cloudscheduler.ResumeJobRequest
@@ -2071,6 +2189,22 @@ def test_run_job(transport: str = "grpc", request_type=cloudscheduler.RunJobRequ
 
 def test_run_job_from_dict():
     test_run_job(request_type=dict)
+
+
+def test_run_job_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = CloudSchedulerClient(
+        credentials=credentials.AnonymousCredentials(), transport="grpc",
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(type(client.transport.run_job), "__call__") as call:
+        client.run_job()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+
+        assert args[0] == cloudscheduler.RunJobRequest()
 
 
 @pytest.mark.asyncio
