@@ -87,7 +87,6 @@ class CloudSchedulerAsyncClient:
         CloudSchedulerClient.parse_common_location_path
     )
 
-    from_service_account_info = CloudSchedulerClient.from_service_account_info
     from_service_account_file = CloudSchedulerClient.from_service_account_file
     from_service_account_json = from_service_account_file
 
@@ -164,14 +163,13 @@ class CloudSchedulerAsyncClient:
         r"""Lists jobs.
 
         Args:
-            request (:class:`google.cloud.scheduler_v1.types.ListJobsRequest`):
+            request (:class:`~.cloudscheduler.ListJobsRequest`):
                 The request object. Request message for listing jobs
                 using
                 [ListJobs][google.cloud.scheduler.v1.CloudScheduler.ListJobs].
             parent (:class:`str`):
                 Required. The location name. For example:
                 ``projects/PROJECT_ID/locations/LOCATION_ID``.
-
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -183,7 +181,7 @@ class CloudSchedulerAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.scheduler_v1.services.cloud_scheduler.pagers.ListJobsAsyncPager:
+            ~.pagers.ListJobsAsyncPager:
                 Response message for listing jobs using
                 [ListJobs][google.cloud.scheduler.v1.CloudScheduler.ListJobs].
 
@@ -255,13 +253,12 @@ class CloudSchedulerAsyncClient:
         r"""Gets a job.
 
         Args:
-            request (:class:`google.cloud.scheduler_v1.types.GetJobRequest`):
+            request (:class:`~.cloudscheduler.GetJobRequest`):
                 The request object. Request message for
                 [GetJob][google.cloud.scheduler.v1.CloudScheduler.GetJob].
             name (:class:`str`):
                 Required. The job name. For example:
                 ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -273,7 +270,7 @@ class CloudSchedulerAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.scheduler_v1.types.Job:
+            ~.job.Job:
                 Configuration for a job.
                 The maximum allowed size for a job is
                 100KB.
@@ -338,17 +335,16 @@ class CloudSchedulerAsyncClient:
         r"""Creates a job.
 
         Args:
-            request (:class:`google.cloud.scheduler_v1.types.CreateJobRequest`):
+            request (:class:`~.cloudscheduler.CreateJobRequest`):
                 The request object. Request message for
                 [CreateJob][google.cloud.scheduler.v1.CloudScheduler.CreateJob].
             parent (:class:`str`):
                 Required. The location name. For example:
                 ``projects/PROJECT_ID/locations/LOCATION_ID``.
-
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            job (:class:`google.cloud.scheduler_v1.types.Job`):
+            job (:class:`~.gcs_job.Job`):
                 Required. The job to add. The user can optionally
                 specify a name for the job in
                 [name][google.cloud.scheduler.v1.Job.name].
@@ -357,7 +353,6 @@ class CloudSchedulerAsyncClient:
                 the system will generate a random unique name that will
                 be returned ([name][google.cloud.scheduler.v1.Job.name])
                 in the response.
-
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -369,7 +364,7 @@ class CloudSchedulerAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.scheduler_v1.types.Job:
+            ~.gcs_job.Job:
                 Configuration for a job.
                 The maximum allowed size for a job is
                 100KB.
@@ -439,10 +434,10 @@ class CloudSchedulerAsyncClient:
         received.
 
         Args:
-            request (:class:`google.cloud.scheduler_v1.types.UpdateJobRequest`):
+            request (:class:`~.cloudscheduler.UpdateJobRequest`):
                 The request object. Request message for
                 [UpdateJob][google.cloud.scheduler.v1.CloudScheduler.UpdateJob].
-            job (:class:`google.cloud.scheduler_v1.types.Job`):
+            job (:class:`~.gcs_job.Job`):
                 Required. The new job properties.
                 [name][google.cloud.scheduler.v1.Job.name] must be
                 specified.
@@ -450,14 +445,12 @@ class CloudSchedulerAsyncClient:
                 Output only fields cannot be modified using UpdateJob.
                 Any value specified for an output only field will be
                 ignored.
-
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
+            update_mask (:class:`~.field_mask.FieldMask`):
                 A  mask used to specify which fields
                 of the job are being updated.
-
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -469,7 +462,7 @@ class CloudSchedulerAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.scheduler_v1.types.Job:
+            ~.gcs_job.Job:
                 Configuration for a job.
                 The maximum allowed size for a job is
                 100KB.
@@ -527,14 +520,13 @@ class CloudSchedulerAsyncClient:
         r"""Deletes a job.
 
         Args:
-            request (:class:`google.cloud.scheduler_v1.types.DeleteJobRequest`):
+            request (:class:`~.cloudscheduler.DeleteJobRequest`):
                 The request object. Request message for deleting a job
                 using
                 [DeleteJob][google.cloud.scheduler.v1.CloudScheduler.DeleteJob].
             name (:class:`str`):
                 Required. The job name. For example:
                 ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -613,13 +605,12 @@ class CloudSchedulerAsyncClient:
         to be paused.
 
         Args:
-            request (:class:`google.cloud.scheduler_v1.types.PauseJobRequest`):
+            request (:class:`~.cloudscheduler.PauseJobRequest`):
                 The request object. Request message for
                 [PauseJob][google.cloud.scheduler.v1.CloudScheduler.PauseJob].
             name (:class:`str`):
                 Required. The job name. For example:
                 ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -631,7 +622,7 @@ class CloudSchedulerAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.scheduler_v1.types.Job:
+            ~.job.Job:
                 Configuration for a job.
                 The maximum allowed size for a job is
                 100KB.
@@ -697,13 +688,12 @@ class CloudSchedulerAsyncClient:
         to be resumed.
 
         Args:
-            request (:class:`google.cloud.scheduler_v1.types.ResumeJobRequest`):
+            request (:class:`~.cloudscheduler.ResumeJobRequest`):
                 The request object. Request message for
                 [ResumeJob][google.cloud.scheduler.v1.CloudScheduler.ResumeJob].
             name (:class:`str`):
                 Required. The job name. For example:
                 ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -715,7 +705,7 @@ class CloudSchedulerAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.scheduler_v1.types.Job:
+            ~.job.Job:
                 Configuration for a job.
                 The maximum allowed size for a job is
                 100KB.
@@ -773,14 +763,13 @@ class CloudSchedulerAsyncClient:
         dispatch the job, even if the job is already running.
 
         Args:
-            request (:class:`google.cloud.scheduler_v1.types.RunJobRequest`):
+            request (:class:`~.cloudscheduler.RunJobRequest`):
                 The request object. Request message for forcing a job to
                 run now using
                 [RunJob][google.cloud.scheduler.v1.CloudScheduler.RunJob].
             name (:class:`str`):
                 Required. The job name. For example:
                 ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -792,7 +781,7 @@ class CloudSchedulerAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.scheduler_v1.types.Job:
+            ~.job.Job:
                 Configuration for a job.
                 The maximum allowed size for a job is
                 100KB.

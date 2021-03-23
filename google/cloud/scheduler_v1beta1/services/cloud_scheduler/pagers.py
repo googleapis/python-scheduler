@@ -25,7 +25,7 @@ class ListJobsPager:
     """A pager for iterating through ``list_jobs`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.scheduler_v1beta1.types.ListJobsResponse` object, and
+    :class:`~.cloudscheduler.ListJobsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``jobs`` field.
 
@@ -34,7 +34,7 @@ class ListJobsPager:
     through the ``jobs`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.scheduler_v1beta1.types.ListJobsResponse`
+    All the usual :class:`~.cloudscheduler.ListJobsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -52,9 +52,9 @@ class ListJobsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.scheduler_v1beta1.types.ListJobsRequest):
+            request (:class:`~.cloudscheduler.ListJobsRequest`):
                 The initial request object.
-            response (google.cloud.scheduler_v1beta1.types.ListJobsResponse):
+            response (:class:`~.cloudscheduler.ListJobsResponse`):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -87,7 +87,7 @@ class ListJobsAsyncPager:
     """A pager for iterating through ``list_jobs`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.scheduler_v1beta1.types.ListJobsResponse` object, and
+    :class:`~.cloudscheduler.ListJobsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``jobs`` field.
 
@@ -96,7 +96,7 @@ class ListJobsAsyncPager:
     through the ``jobs`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.scheduler_v1beta1.types.ListJobsResponse`
+    All the usual :class:`~.cloudscheduler.ListJobsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -114,9 +114,9 @@ class ListJobsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.scheduler_v1beta1.types.ListJobsRequest):
+            request (:class:`~.cloudscheduler.ListJobsRequest`):
                 The initial request object.
-            response (google.cloud.scheduler_v1beta1.types.ListJobsResponse):
+            response (:class:`~.cloudscheduler.ListJobsResponse`):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
