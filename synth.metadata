@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-scheduler.git",
-        "sha": "e717266d12580706a1424f9a7912d53af53252dc"
+        "sha": "b5143565c009d4d57284e7ae79953c6abfeb1bc1"
       }
     },
     {
@@ -161,6 +161,7 @@
     "samples/AUTHORING_GUIDE.md",
     "samples/CONTRIBUTING.md",
     "samples/snippets/noxfile.py",
+    "scheduler-v1-py.tar.gz",
     "scripts/decrypt-secrets.sh",
     "scripts/fixup_scheduler_v1_keywords.py",
     "scripts/fixup_scheduler_v1beta1_keywords.py",
