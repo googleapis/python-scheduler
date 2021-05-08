@@ -229,9 +229,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
     def list_jobs(
         self,
     ) -> Callable[[cloudscheduler.ListJobsRequest], cloudscheduler.ListJobsResponse]:
-        r"""Return a callable for the
-        list jobs
-          method over gRPC.
+        r"""Return a callable for the list jobs method over gRPC.
 
         Lists jobs.
 
@@ -255,9 +253,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
 
     @property
     def get_job(self) -> Callable[[cloudscheduler.GetJobRequest], job.Job]:
-        r"""Return a callable for the
-        get job
-          method over gRPC.
+        r"""Return a callable for the get job method over gRPC.
 
         Gets a job.
 
@@ -281,9 +277,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
 
     @property
     def create_job(self) -> Callable[[cloudscheduler.CreateJobRequest], gcs_job.Job]:
-        r"""Return a callable for the
-        create job
-          method over gRPC.
+        r"""Return a callable for the create job method over gRPC.
 
         Creates a job.
 
@@ -307,9 +301,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
 
     @property
     def update_job(self) -> Callable[[cloudscheduler.UpdateJobRequest], gcs_job.Job]:
-        r"""Return a callable for the
-        update job
-          method over gRPC.
+        r"""Return a callable for the update job method over gRPC.
 
         Updates a job.
 
@@ -344,9 +336,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
 
     @property
     def delete_job(self) -> Callable[[cloudscheduler.DeleteJobRequest], empty.Empty]:
-        r"""Return a callable for the
-        delete job
-          method over gRPC.
+        r"""Return a callable for the delete job method over gRPC.
 
         Deletes a job.
 
@@ -370,9 +360,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
 
     @property
     def pause_job(self) -> Callable[[cloudscheduler.PauseJobRequest], job.Job]:
-        r"""Return a callable for the
-        pause job
-          method over gRPC.
+        r"""Return a callable for the pause job method over gRPC.
 
         Pauses a job.
 
@@ -407,9 +395,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
 
     @property
     def resume_job(self) -> Callable[[cloudscheduler.ResumeJobRequest], job.Job]:
-        r"""Return a callable for the
-        resume job
-          method over gRPC.
+        r"""Return a callable for the resume job method over gRPC.
 
         Resume a job.
 
@@ -443,9 +429,7 @@ class CloudSchedulerGrpcTransport(CloudSchedulerTransport):
 
     @property
     def run_job(self) -> Callable[[cloudscheduler.RunJobRequest], job.Job]:
-        r"""Return a callable for the
-        run job
-          method over gRPC.
+        r"""Return a callable for the run job method over gRPC.
 
         Forces a job to run now.
         When this method is called, Cloud Scheduler will
