@@ -112,7 +112,7 @@ class HttpTarget(proto.Message):
 
     uri = proto.Field(proto.STRING, number=1,)
     http_method = proto.Field(proto.ENUM, number=2, enum="HttpMethod",)
-    headers = proto.MapField(proto.STRING, proto.STRING, number=3,)
+    headers = proto.MapField(proto.STRING, proto.STRING, number=3)
     body = proto.Field(proto.BYTES, number=4,)
     oauth_token = proto.Field(
         proto.MESSAGE, number=5, oneof="authorization_header", message="OAuthToken",
@@ -200,7 +200,7 @@ class AppEngineHttpTarget(proto.Message):
         proto.MESSAGE, number=2, message="AppEngineRouting",
     )
     relative_uri = proto.Field(proto.STRING, number=3,)
-    headers = proto.MapField(proto.STRING, proto.STRING, number=4,)
+    headers = proto.MapField(proto.STRING, proto.STRING, number=4)
     body = proto.Field(proto.BYTES, number=5,)
 
 
@@ -231,7 +231,7 @@ class PubsubTarget(proto.Message):
 
     topic_name = proto.Field(proto.STRING, number=1,)
     data = proto.Field(proto.BYTES, number=3,)
-    attributes = proto.MapField(proto.STRING, proto.STRING, number=4,)
+    attributes = proto.MapField(proto.STRING, proto.STRING, number=4)
 
 
 class AppEngineRouting(proto.Message):
