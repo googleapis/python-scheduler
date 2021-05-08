@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,15 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import warnings
-from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Tuple, Union
 
 from google.api_core import gapic_v1  # type: ignore
 from google.api_core import grpc_helpers_async  # type: ignore
 from google import auth  # type: ignore
 from google.auth import credentials  # type: ignore
 from google.auth.transport.grpc import SslCredentials  # type: ignore
+import packaging.version
 
 import grpc  # type: ignore
 from grpc.experimental import aio  # type: ignore
@@ -31,7 +30,6 @@ from google.cloud.scheduler_v1beta1.types import cloudscheduler
 from google.cloud.scheduler_v1beta1.types import job
 from google.cloud.scheduler_v1beta1.types import job as gcs_job
 from google.protobuf import empty_pb2 as empty  # type: ignore
-
 from .base import CloudSchedulerTransport, DEFAULT_CLIENT_INFO
 from .grpc import CloudSchedulerGrpcTransport
 
@@ -84,13 +82,15 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
         Returns:
             aio.Channel: A gRPC AsyncIO channel object.
         """
-        scopes = scopes or cls.AUTH_SCOPES
+
+        self_signed_jwt_kwargs = cls._get_self_signed_jwt_kwargs(host, scopes)
+
         return grpc_helpers_async.create_channel(
             host,
             credentials=credentials,
             credentials_file=credentials_file,
-            scopes=scopes,
             quota_project_id=quota_project_id,
+            **self_signed_jwt_kwargs,
             **kwargs,
         )
 
@@ -112,7 +112,8 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
         """Instantiate the transport.
 
         Args:
-            host (Optional[str]): The hostname to connect to.
+            host (Optional[str]):
+                 The hostname to connect to.
             credentials (Optional[google.auth.credentials.Credentials]): The
                 authorization credentials to attach to requests. These
                 credentials identify the application to the service; if none
@@ -170,7 +171,6 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
             # If a channel was explicitly provided, set it.
             self._grpc_channel = channel
             self._ssl_channel_credentials = None
-
         else:
             if api_mtls_endpoint:
                 host = api_mtls_endpoint
@@ -235,7 +235,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     ) -> Callable[
         [cloudscheduler.ListJobsRequest], Awaitable[cloudscheduler.ListJobsResponse]
     ]:
-        r"""Return a callable for the list jobs method over gRPC.
+        r"""Return a callable for the
+        list jobs
+          method over gRPC.
 
         Lists jobs.
 
@@ -259,7 +261,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
 
     @property
     def get_job(self) -> Callable[[cloudscheduler.GetJobRequest], Awaitable[job.Job]]:
-        r"""Return a callable for the get job method over gRPC.
+        r"""Return a callable for the
+        get job
+          method over gRPC.
 
         Gets a job.
 
@@ -285,7 +289,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def create_job(
         self,
     ) -> Callable[[cloudscheduler.CreateJobRequest], Awaitable[gcs_job.Job]]:
-        r"""Return a callable for the create job method over gRPC.
+        r"""Return a callable for the
+        create job
+          method over gRPC.
 
         Creates a job.
 
@@ -311,7 +317,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def update_job(
         self,
     ) -> Callable[[cloudscheduler.UpdateJobRequest], Awaitable[gcs_job.Job]]:
-        r"""Return a callable for the update job method over gRPC.
+        r"""Return a callable for the
+        update job
+          method over gRPC.
 
         Updates a job.
 
@@ -348,7 +356,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def delete_job(
         self,
     ) -> Callable[[cloudscheduler.DeleteJobRequest], Awaitable[empty.Empty]]:
-        r"""Return a callable for the delete job method over gRPC.
+        r"""Return a callable for the
+        delete job
+          method over gRPC.
 
         Deletes a job.
 
@@ -374,7 +384,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def pause_job(
         self,
     ) -> Callable[[cloudscheduler.PauseJobRequest], Awaitable[job.Job]]:
-        r"""Return a callable for the pause job method over gRPC.
+        r"""Return a callable for the
+        pause job
+          method over gRPC.
 
         Pauses a job.
 
@@ -411,7 +423,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
     def resume_job(
         self,
     ) -> Callable[[cloudscheduler.ResumeJobRequest], Awaitable[job.Job]]:
-        r"""Return a callable for the resume job method over gRPC.
+        r"""Return a callable for the
+        resume job
+          method over gRPC.
 
         Resume a job.
 
@@ -445,7 +459,9 @@ class CloudSchedulerGrpcAsyncIOTransport(CloudSchedulerTransport):
 
     @property
     def run_job(self) -> Callable[[cloudscheduler.RunJobRequest], Awaitable[job.Job]]:
-        r"""Return a callable for the run job method over gRPC.
+        r"""Return a callable for the
+        run job
+          method over gRPC.
 
         Forces a job to run now.
         When this method is called, Cloud Scheduler will
