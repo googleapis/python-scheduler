@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 from collections import OrderedDict
 from distutils import util
 import os
@@ -39,6 +41,7 @@ from google.protobuf import duration_pb2 as duration  # type: ignore
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
 from google.protobuf import timestamp_pb2 as timestamp  # type: ignore
 from google.rpc import status_pb2 as status  # type: ignore
+
 from .transports.base import CloudSchedulerTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc import CloudSchedulerGrpcTransport
 from .transports.grpc_asyncio import CloudSchedulerGrpcAsyncIOTransport
@@ -373,8 +376,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1.types.ListJobsRequest):
-                The request object.
-                Request message for listing jobs
+                The request object. Request message for listing jobs
                 using
                 [ListJobs][google.cloud.scheduler.v1.CloudScheduler.ListJobs].
             parent (str):
@@ -384,6 +386,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -415,8 +418,10 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.ListJobsRequest):
             request = cloudscheduler.ListJobsRequest(request)
+
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
 
@@ -455,8 +460,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1.types.GetJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [GetJob][google.cloud.scheduler.v1.CloudScheduler.GetJob].
             name (str):
                 Required. The job name. For example:
@@ -465,6 +469,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -494,8 +499,10 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.GetJobRequest):
             request = cloudscheduler.GetJobRequest(request)
+
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -529,8 +536,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1.types.CreateJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [CreateJob][google.cloud.scheduler.v1.CloudScheduler.CreateJob].
             parent (str):
                 Required. The location name. For example:
@@ -552,6 +558,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
                 This corresponds to the ``job`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -581,8 +588,10 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.CreateJobRequest):
             request = cloudscheduler.CreateJobRequest(request)
+
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if parent is not None:
                 request.parent = parent
             if job is not None:
@@ -629,8 +638,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1.types.UpdateJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [UpdateJob][google.cloud.scheduler.v1.CloudScheduler.UpdateJob].
             job (google.cloud.scheduler_v1.types.Job):
                 Required. The new job properties.
@@ -651,6 +659,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -680,8 +689,10 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.UpdateJobRequest):
             request = cloudscheduler.UpdateJobRequest(request)
+
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if job is not None:
                 request.job = job
             if update_mask is not None:
@@ -716,8 +727,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1.types.DeleteJobRequest):
-                The request object.
-                Request message for deleting a job
+                The request object. Request message for deleting a job
                 using
                 [DeleteJob][google.cloud.scheduler.v1.CloudScheduler.DeleteJob].
             name (str):
@@ -727,6 +737,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -749,8 +760,10 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.DeleteJobRequest):
             request = cloudscheduler.DeleteJobRequest(request)
+
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -793,8 +806,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1.types.PauseJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [PauseJob][google.cloud.scheduler.v1.CloudScheduler.PauseJob].
             name (str):
                 Required. The job name. For example:
@@ -803,6 +815,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -832,8 +845,10 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.PauseJobRequest):
             request = cloudscheduler.PauseJobRequest(request)
+
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -876,8 +891,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1.types.ResumeJobRequest):
-                The request object.
-                Request message for
+                The request object. Request message for
                 [ResumeJob][google.cloud.scheduler.v1.CloudScheduler.ResumeJob].
             name (str):
                 Required. The job name. For example:
@@ -886,6 +900,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -915,8 +930,10 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.ResumeJobRequest):
             request = cloudscheduler.ResumeJobRequest(request)
+
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 
@@ -951,8 +968,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
 
         Args:
             request (google.cloud.scheduler_v1.types.RunJobRequest):
-                The request object.
-                Request message for forcing a job to
+                The request object. Request message for forcing a job to
                 run now using
                 [RunJob][google.cloud.scheduler.v1.CloudScheduler.RunJob].
             name (str):
@@ -962,6 +978,7 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
+
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -991,8 +1008,10 @@ class CloudSchedulerClient(metaclass=CloudSchedulerClientMeta):
         # there are no flattened fields.
         if not isinstance(request, cloudscheduler.RunJobRequest):
             request = cloudscheduler.RunJobRequest(request)
+
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+
             if name is not None:
                 request.name = name
 

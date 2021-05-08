@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.scheduler_v1.types import job as gcs_job
 from google.protobuf import field_mask_pb2 as field_mask  # type: ignore
@@ -65,9 +68,11 @@ class ListJobsRequest(proto.Message):
             while iterating through pages.
     """
 
-    parent = proto.Field(proto.STRING, number=1,)
-    page_size = proto.Field(proto.INT32, number=5,)
-    page_token = proto.Field(proto.STRING, number=6,)
+    parent = proto.Field(proto.STRING, number=1)
+
+    page_size = proto.Field(proto.INT32, number=5)
+
+    page_token = proto.Field(proto.STRING, number=6)
 
 
 class ListJobsResponse(proto.Message):
@@ -95,7 +100,8 @@ class ListJobsResponse(proto.Message):
         return self
 
     jobs = proto.RepeatedField(proto.MESSAGE, number=1, message=gcs_job.Job,)
-    next_page_token = proto.Field(proto.STRING, number=2,)
+
+    next_page_token = proto.Field(proto.STRING, number=2)
 
 
 class GetJobRequest(proto.Message):
@@ -108,7 +114,7 @@ class GetJobRequest(proto.Message):
             ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
     """
 
-    name = proto.Field(proto.STRING, number=1,)
+    name = proto.Field(proto.STRING, number=1)
 
 
 class CreateJobRequest(proto.Message):
@@ -130,7 +136,8 @@ class CreateJobRequest(proto.Message):
             response.
     """
 
-    parent = proto.Field(proto.STRING, number=1,)
+    parent = proto.Field(proto.STRING, number=1)
+
     job = proto.Field(proto.MESSAGE, number=2, message=gcs_job.Job,)
 
 
@@ -152,6 +159,7 @@ class UpdateJobRequest(proto.Message):
     """
 
     job = proto.Field(proto.MESSAGE, number=1, message=gcs_job.Job,)
+
     update_mask = proto.Field(proto.MESSAGE, number=2, message=field_mask.FieldMask,)
 
 
@@ -165,7 +173,7 @@ class DeleteJobRequest(proto.Message):
             ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
     """
 
-    name = proto.Field(proto.STRING, number=1,)
+    name = proto.Field(proto.STRING, number=1)
 
 
 class PauseJobRequest(proto.Message):
@@ -178,7 +186,7 @@ class PauseJobRequest(proto.Message):
             ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
     """
 
-    name = proto.Field(proto.STRING, number=1,)
+    name = proto.Field(proto.STRING, number=1)
 
 
 class ResumeJobRequest(proto.Message):
@@ -191,7 +199,7 @@ class ResumeJobRequest(proto.Message):
             ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
     """
 
-    name = proto.Field(proto.STRING, number=1,)
+    name = proto.Field(proto.STRING, number=1)
 
 
 class RunJobRequest(proto.Message):
@@ -204,7 +212,7 @@ class RunJobRequest(proto.Message):
             ``projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID``.
     """
 
-    name = proto.Field(proto.STRING, number=1,)
+    name = proto.Field(proto.STRING, number=1)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

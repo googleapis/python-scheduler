@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
 import proto  # type: ignore
+
 
 from google.cloud.scheduler_v1beta1.types import target
 from google.protobuf import duration_pb2 as duration  # type: ignore
@@ -152,29 +155,42 @@ class Job(proto.Message):
         DISABLED = 3
         UPDATE_FAILED = 4
 
-    name = proto.Field(proto.STRING, number=1,)
-    description = proto.Field(proto.STRING, number=2,)
+    name = proto.Field(proto.STRING, number=1)
+
+    description = proto.Field(proto.STRING, number=2)
+
     pubsub_target = proto.Field(
         proto.MESSAGE, number=4, oneof="target", message=target.PubsubTarget,
     )
+
     app_engine_http_target = proto.Field(
         proto.MESSAGE, number=5, oneof="target", message=target.AppEngineHttpTarget,
     )
+
     http_target = proto.Field(
         proto.MESSAGE, number=6, oneof="target", message=target.HttpTarget,
     )
-    schedule = proto.Field(proto.STRING, number=20,)
-    time_zone = proto.Field(proto.STRING, number=21,)
+
+    schedule = proto.Field(proto.STRING, number=20)
+
+    time_zone = proto.Field(proto.STRING, number=21)
+
     user_update_time = proto.Field(
         proto.MESSAGE, number=9, message=timestamp.Timestamp,
     )
+
     state = proto.Field(proto.ENUM, number=10, enum=State,)
+
     status = proto.Field(proto.MESSAGE, number=11, message=gr_status.Status,)
+
     schedule_time = proto.Field(proto.MESSAGE, number=17, message=timestamp.Timestamp,)
+
     last_attempt_time = proto.Field(
         proto.MESSAGE, number=18, message=timestamp.Timestamp,
     )
+
     retry_config = proto.Field(proto.MESSAGE, number=19, message="RetryConfig",)
+
     attempt_deadline = proto.Field(proto.MESSAGE, number=22, message=duration.Duration,)
 
 
@@ -252,17 +268,21 @@ class RetryConfig(proto.Message):
             The default value of this field is 5.
     """
 
-    retry_count = proto.Field(proto.INT32, number=1,)
+    retry_count = proto.Field(proto.INT32, number=1)
+
     max_retry_duration = proto.Field(
         proto.MESSAGE, number=2, message=duration.Duration,
     )
+
     min_backoff_duration = proto.Field(
         proto.MESSAGE, number=3, message=duration.Duration,
     )
+
     max_backoff_duration = proto.Field(
         proto.MESSAGE, number=4, message=duration.Duration,
     )
-    max_doublings = proto.Field(proto.INT32, number=5,)
+
+    max_doublings = proto.Field(proto.INT32, number=5)
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

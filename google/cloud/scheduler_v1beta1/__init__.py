@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 # Copyright 2020 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +16,6 @@
 #
 
 from .services.cloud_scheduler import CloudSchedulerClient
-
 from .types.cloudscheduler import CreateJobRequest
 from .types.cloudscheduler import DeleteJobRequest
 from .types.cloudscheduler import GetJobRequest
@@ -34,6 +34,7 @@ from .types.target import HttpTarget
 from .types.target import OAuthToken
 from .types.target import OidcToken
 from .types.target import PubsubTarget
+
 
 __all__ = (
     "AppEngineHttpTarget",
