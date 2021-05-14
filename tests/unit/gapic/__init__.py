@@ -13,21 +13,3 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from collections import OrderedDict
-from typing import Dict, Type
-
-from .base import CloudSchedulerTransport
-from .grpc import CloudSchedulerGrpcTransport
-from .grpc_asyncio import CloudSchedulerGrpcAsyncIOTransport
-
-
-# Compile a registry of transports.
-_transport_registry = OrderedDict()  # type: Dict[str, Type[CloudSchedulerTransport]]
-_transport_registry['grpc'] = CloudSchedulerGrpcTransport
-_transport_registry['grpc_asyncio'] = CloudSchedulerGrpcAsyncIOTransport
-
-__all__ = (
-    'CloudSchedulerTransport',
-    'CloudSchedulerGrpcTransport',
-    'CloudSchedulerGrpcAsyncIOTransport',
-)
