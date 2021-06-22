@@ -4,6 +4,18 @@
 
 [1]: https://pypi.org/project/google-cloud-scheduler/#history
 
+### [2.2.1](https://www.github.com/googleapis/python-scheduler/compare/v2.2.0...v2.2.1) (2021-06-22)
+
+
+### Bug Fixes
+
+* **deps:** add packaging requirement ([#89](https://www.github.com/googleapis/python-scheduler/issues/89)) ([8966559](https://www.github.com/googleapis/python-scheduler/commit/8966559b7bf2e4409906ca4a5eb831a011ba3484))
+
+
+### Documentation
+
+* omit mention of Python 2.7 in 'CONTRIBUTING.rst' ([#1127](https://www.github.com/googleapis/python-scheduler/issues/1127)) ([#99](https://www.github.com/googleapis/python-scheduler/issues/99)) ([2dcbcdf](https://www.github.com/googleapis/python-scheduler/commit/2dcbcdf36c7678ee62d2b76ea31bee69f597d3b2)), closes [#1126](https://www.github.com/googleapis/python-scheduler/issues/1126)
+
 ## [2.2.0](https://www.github.com/googleapis/python-scheduler/compare/v2.1.1...v2.2.0) (2021-03-31)
 
 
