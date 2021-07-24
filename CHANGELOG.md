@@ -4,6 +4,18 @@
 
 [1]: https://pypi.org/project/google-cloud-scheduler/#history
 
+## [2.4.0](https://www.github.com/googleapis/python-scheduler/compare/v2.3.1...v2.4.0) (2021-07-24)
+
+
+### Features
+
+* add Samples section to CONTRIBUTING.rst ([#111](https://www.github.com/googleapis/python-scheduler/issues/111)) ([ed91668](https://www.github.com/googleapis/python-scheduler/commit/ed9166882974b4eadb63df4e5278e88aeb0f8d89))
+
+
+### Bug Fixes
+
+* enable self signed jwt for grpc ([#116](https://www.github.com/googleapis/python-scheduler/issues/116)) ([a18fe2a](https://www.github.com/googleapis/python-scheduler/commit/a18fe2a4fe3dff4550687c0853aee351b54596de))
+
 ### [2.3.1](https://www.github.com/googleapis/python-scheduler/compare/v2.3.0...v2.3.1) (2021-07-20)
 
 
