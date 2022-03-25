@@ -29,6 +29,11 @@ BLACK_PATHS = ["docs", "google", "tests", "noxfile.py", "setup.py"]
 if os.path.exists("samples"):
     BLACK_PATHS.append("samples")
 
+DEFAULT_PYTHON_VERSION = "3.8"
+
+# Error if a python version is missing
+nox.options.error_on_missing_interpreters = True
+
 
 @nox.session(python="3.7")
 def lint(session):
@@ -139,7 +144,7 @@ def docs(session):
     """Build the docs for this library."""
 
     session.install("-e", ".")
-    session.install("sphinx<3.0.0", "alabaster", "recommonmark")
+    session.install("sphinx<3.0.0", "alabaster", "recommonmark", "Jinja2<3.1")
 
     shutil.rmtree(os.path.join("docs", "_build"), ignore_errors=True)
     session.run(
