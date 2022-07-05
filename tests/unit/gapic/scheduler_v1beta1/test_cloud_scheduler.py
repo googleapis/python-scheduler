@@ -3048,7 +3048,6 @@ def test_cloud_scheduler_transport_auth_adc(transport_class):
     [
         transports.CloudSchedulerGrpcTransport,
         transports.CloudSchedulerGrpcAsyncIOTransport,
-        transports.CloudSchedulerRestTransport,
     ],
 )
 def test_cloud_scheduler_transport_auth_gdch_credentials(transport_class):
