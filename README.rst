@@ -3,7 +3,7 @@ Python Client for Google Cloud Scheduler API
 
 |stable| |pypi| |versions|
 
-`Google Cloud Scheduler API`_: 
+`Google Cloud Scheduler API`_: lets you set up scheduled units of work to be executed at defined times or regular intervals. These work units are commonly known as cron jobs. Typical use cases might include sending out a report email on a daily basis, updating some cached data every 10 minutes, or updating some summary information once an hour.
 
 - `Client Library Documentation`_
 - `Product Documentation`_
