@@ -1,6 +1,6 @@
 {
     "name": "cloudscheduler",
-    "name_pretty": "Google Cloud Scheduler",
+    "name_pretty": "Cloud Scheduler",
     "product_documentation": "https://cloud.google.com/scheduler/docs",
     "client_documentation": "https://cloud.google.com/python/docs/reference/cloudscheduler/latest",
     "issue_tracker": "https://issuetracker.google.com/savedsearches/5411429",
