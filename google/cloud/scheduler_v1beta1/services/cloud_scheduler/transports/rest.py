@@ -14,25 +14,22 @@
 # limitations under the License.
 #
 
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import rest_streaming
-from google.api_core import path_template
-from google.api_core import gapic_v1
-
-from google.protobuf import json_format
-from google.cloud.location import locations_pb2 # type: ignore
-from requests import __version__ as requests_version
 import dataclasses
+import json  # type: ignore
 import re
 from typing import Callable, Dict, List, Optional, Sequence, Tuple, Union
 import warnings
+
+from google.api_core import gapic_v1, path_template, rest_helpers, rest_streaming
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+from google.cloud.location import locations_pb2  # type: ignore
+from google.protobuf import json_format
+import grpc  # type: ignore
+from requests import __version__ as requests_version
 
 try:
     OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
@@ -40,13 +37,14 @@ except AttributeError:  # pragma: NO COVER
     OptionalRetry = Union[retries.Retry, object]  # type: ignore
 
 
+from google.protobuf import empty_pb2  # type: ignore
+
 from google.cloud.scheduler_v1beta1.types import cloudscheduler
 from google.cloud.scheduler_v1beta1.types import job
 from google.cloud.scheduler_v1beta1.types import job as gcs_job
-from google.protobuf import empty_pb2  # type: ignore
 
-from .base import CloudSchedulerTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
-
+from .base import CloudSchedulerTransport
+from .base import DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
 
 DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     gapic_version=BASE_DEFAULT_CLIENT_INFO.gapic_version,
@@ -135,7 +133,12 @@ class CloudSchedulerRestInterceptor:
 
 
     """
-    def pre_create_job(self, request: cloudscheduler.CreateJobRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[cloudscheduler.CreateJobRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_create_job(
+        self,
+        request: cloudscheduler.CreateJobRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[cloudscheduler.CreateJobRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for create_job
 
         Override in a subclass to manipulate the request or metadata
@@ -151,7 +154,12 @@ class CloudSchedulerRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_delete_job(self, request: cloudscheduler.DeleteJobRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[cloudscheduler.DeleteJobRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_delete_job(
+        self,
+        request: cloudscheduler.DeleteJobRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[cloudscheduler.DeleteJobRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for delete_job
 
         Override in a subclass to manipulate the request or metadata
@@ -159,7 +167,9 @@ class CloudSchedulerRestInterceptor:
         """
         return request, metadata
 
-    def pre_get_job(self, request: cloudscheduler.GetJobRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[cloudscheduler.GetJobRequest, Sequence[Tuple[str, str]]]:
+    def pre_get_job(
+        self, request: cloudscheduler.GetJobRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[cloudscheduler.GetJobRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for get_job
 
         Override in a subclass to manipulate the request or metadata
@@ -175,7 +185,12 @@ class CloudSchedulerRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_list_jobs(self, request: cloudscheduler.ListJobsRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[cloudscheduler.ListJobsRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_list_jobs(
+        self,
+        request: cloudscheduler.ListJobsRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[cloudscheduler.ListJobsRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for list_jobs
 
         Override in a subclass to manipulate the request or metadata
@@ -183,7 +198,9 @@ class CloudSchedulerRestInterceptor:
         """
         return request, metadata
 
-    def post_list_jobs(self, response: cloudscheduler.ListJobsResponse) -> cloudscheduler.ListJobsResponse:
+    def post_list_jobs(
+        self, response: cloudscheduler.ListJobsResponse
+    ) -> cloudscheduler.ListJobsResponse:
         """Post-rpc interceptor for list_jobs
 
         Override in a subclass to manipulate the response
@@ -191,7 +208,12 @@ class CloudSchedulerRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_pause_job(self, request: cloudscheduler.PauseJobRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[cloudscheduler.PauseJobRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_pause_job(
+        self,
+        request: cloudscheduler.PauseJobRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[cloudscheduler.PauseJobRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for pause_job
 
         Override in a subclass to manipulate the request or metadata
@@ -207,7 +229,12 @@ class CloudSchedulerRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_resume_job(self, request: cloudscheduler.ResumeJobRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[cloudscheduler.ResumeJobRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_resume_job(
+        self,
+        request: cloudscheduler.ResumeJobRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[cloudscheduler.ResumeJobRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for resume_job
 
         Override in a subclass to manipulate the request or metadata
@@ -223,7 +250,10 @@ class CloudSchedulerRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_run_job(self, request: cloudscheduler.RunJobRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[cloudscheduler.RunJobRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_run_job(
+        self, request: cloudscheduler.RunJobRequest, metadata: Sequence[Tuple[str, str]]
+    ) -> Tuple[cloudscheduler.RunJobRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for run_job
 
         Override in a subclass to manipulate the request or metadata
@@ -239,7 +269,12 @@ class CloudSchedulerRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_update_job(self, request: cloudscheduler.UpdateJobRequest, metadata: Sequence[Tuple[str, str]]) -> Tuple[cloudscheduler.UpdateJobRequest, Sequence[Tuple[str, str]]]:
+
+    def pre_update_job(
+        self,
+        request: cloudscheduler.UpdateJobRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> Tuple[cloudscheduler.UpdateJobRequest, Sequence[Tuple[str, str]]]:
         """Pre-rpc interceptor for update_job
 
         Override in a subclass to manipulate the request or metadata
@@ -256,7 +291,11 @@ class CloudSchedulerRestInterceptor:
         """
         return response
 
-    def pre_get_location(self, request: locations_pb2.GetLocationRequest, metadata: Sequence[Tuple[str, str]]) -> locations_pb2.Location:
+    def pre_get_location(
+        self,
+        request: locations_pb2.GetLocationRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> locations_pb2.Location:
         """Pre-rpc interceptor for get_location
 
         Override in a subclass to manipulate the request or metadata
@@ -264,7 +303,9 @@ class CloudSchedulerRestInterceptor:
         """
         return request, metadata
 
-    def post_get_location(self, response: locations_pb2.GetLocationRequest) -> locations_pb2.Location:
+    def post_get_location(
+        self, response: locations_pb2.GetLocationRequest
+    ) -> locations_pb2.Location:
         """Post-rpc interceptor for get_location
 
         Override in a subclass to manipulate the response
@@ -272,7 +313,12 @@ class CloudSchedulerRestInterceptor:
         it is returned to user code.
         """
         return response
-    def pre_list_locations(self, request: locations_pb2.ListLocationsRequest, metadata: Sequence[Tuple[str, str]]) -> locations_pb2.ListLocationsResponse:
+
+    def pre_list_locations(
+        self,
+        request: locations_pb2.ListLocationsRequest,
+        metadata: Sequence[Tuple[str, str]],
+    ) -> locations_pb2.ListLocationsResponse:
         """Pre-rpc interceptor for list_locations
 
         Override in a subclass to manipulate the request or metadata
@@ -280,7 +326,9 @@ class CloudSchedulerRestInterceptor:
         """
         return request, metadata
 
-    def post_list_locations(self, response: locations_pb2.ListLocationsRequest) -> locations_pb2.ListLocationsResponse:
+    def post_list_locations(
+        self, response: locations_pb2.ListLocationsRequest
+    ) -> locations_pb2.ListLocationsResponse:
         """Post-rpc interceptor for list_locations
 
         Override in a subclass to manipulate the response
@@ -311,20 +359,21 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
 
     """
 
-    def __init__(self, *,
-            host: str = 'cloudscheduler.googleapis.com',
-            credentials: Optional[ga_credentials.Credentials] = None,
-            credentials_file: Optional[str] = None,
-            scopes: Optional[Sequence[str]] = None,
-            client_cert_source_for_mtls: Optional[Callable[[
-                ], Tuple[bytes, bytes]]] = None,
-            quota_project_id: Optional[str] = None,
-            client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
-            always_use_jwt_access: Optional[bool] = False,
-            url_scheme: str = 'https',
-            interceptor: Optional[CloudSchedulerRestInterceptor] = None,
-            api_audience: Optional[str] = None,
-            ) -> None:
+    def __init__(
+        self,
+        *,
+        host: str = "cloudscheduler.googleapis.com",
+        credentials: Optional[ga_credentials.Credentials] = None,
+        credentials_file: Optional[str] = None,
+        scopes: Optional[Sequence[str]] = None,
+        client_cert_source_for_mtls: Optional[Callable[[], Tuple[bytes, bytes]]] = None,
+        quota_project_id: Optional[str] = None,
+        client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
+        always_use_jwt_access: Optional[bool] = False,
+        url_scheme: str = "https",
+        interceptor: Optional[CloudSchedulerRestInterceptor] = None,
+        api_audience: Optional[str] = None,
+    ) -> None:
         """Instantiate the transport.
 
         Args:
@@ -363,7 +412,9 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
         # credentials object
         maybe_url_match = re.match("^(?P<scheme>http(?:s)?://)?(?P<host>.*)$", host)
         if maybe_url_match is None:
-            raise ValueError(f"Unexpected hostname structure: {host}")  # pragma: NO COVER
+            raise ValueError(
+                f"Unexpected hostname structure: {host}"
+            )  # pragma: NO COVER
 
         url_match_items = maybe_url_match.groupdict()
 
@@ -374,10 +425,11 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
             credentials=credentials,
             client_info=client_info,
             always_use_jwt_access=always_use_jwt_access,
-            api_audience=api_audience
+            api_audience=api_audience,
         )
         self._session = AuthorizedSession(
-            self._credentials, default_host=self.DEFAULT_HOST)
+            self._credentials, default_host=self.DEFAULT_HOST
+        )
         if client_cert_source_for_mtls:
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._interceptor = interceptor or CloudSchedulerRestInterceptor()
@@ -387,19 +439,24 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
         def __hash__(self):
             return hash("CreateJob")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: cloudscheduler.CreateJobRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> gcs_job.Job:
+        def __call__(
+            self,
+            request: cloudscheduler.CreateJobRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> gcs_job.Job:
             r"""Call the create job method over HTTP.
 
             Args:
@@ -421,11 +478,12 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1beta1/{parent=projects/*/locations/*}/jobs',
-                'body': 'job',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1beta1/{parent=projects/*/locations/*}/jobs",
+                    "body": "job",
+                },
             ]
             request, metadata = self._interceptor.pre_create_job(request, metadata)
             pb_request = cloudscheduler.CreateJobRequest.pb(request)
@@ -434,33 +492,35 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -479,19 +539,24 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
         def __hash__(self):
             return hash("DeleteJob")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: cloudscheduler.DeleteJobRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ):
+        def __call__(
+            self,
+            request: cloudscheduler.DeleteJobRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ):
             r"""Call the delete job method over HTTP.
 
             Args:
@@ -506,37 +571,40 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
                     sent along with the request as metadata.
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'delete',
-                'uri': '/v1beta1/{name=projects/*/locations/*/jobs/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "delete",
+                    "uri": "/v1beta1/{name=projects/*/locations/*/jobs/*}",
+                },
             ]
             request, metadata = self._interceptor.pre_delete_job(request, metadata)
             pb_request = cloudscheduler.DeleteJobRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -547,19 +615,24 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
         def __hash__(self):
             return hash("GetJob")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: cloudscheduler.GetJobRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> job.Job:
+        def __call__(
+            self,
+            request: cloudscheduler.GetJobRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> job.Job:
             r"""Call the get job method over HTTP.
 
             Args:
@@ -581,37 +654,40 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1beta1/{name=projects/*/locations/*/jobs/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1beta1/{name=projects/*/locations/*/jobs/*}",
+                },
             ]
             request, metadata = self._interceptor.pre_get_job(request, metadata)
             pb_request = cloudscheduler.GetJobRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -630,19 +706,24 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
         def __hash__(self):
             return hash("ListJobs")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: cloudscheduler.ListJobsRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> cloudscheduler.ListJobsResponse:
+        def __call__(
+            self,
+            request: cloudscheduler.ListJobsRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> cloudscheduler.ListJobsResponse:
             r"""Call the list jobs method over HTTP.
 
             Args:
@@ -663,37 +744,40 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1beta1/{parent=projects/*/locations/*}/jobs',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1beta1/{parent=projects/*/locations/*}/jobs",
+                },
             ]
             request, metadata = self._interceptor.pre_list_jobs(request, metadata)
             pb_request = cloudscheduler.ListJobsRequest.pb(request)
             transcoded_request = path_template.transcode(http_options, pb_request)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True,
-            ))
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -712,19 +796,24 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
         def __hash__(self):
             return hash("PauseJob")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: cloudscheduler.PauseJobRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> job.Job:
+        def __call__(
+            self,
+            request: cloudscheduler.PauseJobRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> job.Job:
             r"""Call the pause job method over HTTP.
 
             Args:
@@ -746,11 +835,12 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1beta1/{name=projects/*/locations/*/jobs/*}:pause',
-                'body': '*',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1beta1/{name=projects/*/locations/*/jobs/*}:pause",
+                    "body": "*",
+                },
             ]
             request, metadata = self._interceptor.pre_pause_job(request, metadata)
             pb_request = cloudscheduler.PauseJobRequest.pb(request)
@@ -759,33 +849,35 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -804,19 +896,24 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
         def __hash__(self):
             return hash("ResumeJob")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: cloudscheduler.ResumeJobRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> job.Job:
+        def __call__(
+            self,
+            request: cloudscheduler.ResumeJobRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> job.Job:
             r"""Call the resume job method over HTTP.
 
             Args:
@@ -838,11 +935,12 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1beta1/{name=projects/*/locations/*/jobs/*}:resume',
-                'body': '*',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1beta1/{name=projects/*/locations/*/jobs/*}:resume",
+                    "body": "*",
+                },
             ]
             request, metadata = self._interceptor.pre_resume_job(request, metadata)
             pb_request = cloudscheduler.ResumeJobRequest.pb(request)
@@ -851,33 +949,35 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -896,19 +996,24 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
         def __hash__(self):
             return hash("RunJob")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: cloudscheduler.RunJobRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> job.Job:
+        def __call__(
+            self,
+            request: cloudscheduler.RunJobRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> job.Job:
             r"""Call the run job method over HTTP.
 
             Args:
@@ -930,11 +1035,12 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'post',
-                'uri': '/v1beta1/{name=projects/*/locations/*/jobs/*}:run',
-                'body': '*',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "post",
+                    "uri": "/v1beta1/{name=projects/*/locations/*/jobs/*}:run",
+                    "body": "*",
+                },
             ]
             request, metadata = self._interceptor.pre_run_job(request, metadata)
             pb_request = cloudscheduler.RunJobRequest.pb(request)
@@ -943,33 +1049,35 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -988,19 +1096,24 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
         def __hash__(self):
             return hash("UpdateJob")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] =  {
-        }
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
-            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
+            return {
+                k: v
+                for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items()
+                if k not in message_dict
+            }
 
-        def __call__(self,
-                request: cloudscheduler.UpdateJobRequest, *,
-                retry: OptionalRetry=gapic_v1.method.DEFAULT,
-                timeout: Optional[float]=None,
-                metadata: Sequence[Tuple[str, str]]=(),
-                ) -> gcs_job.Job:
+        def __call__(
+            self,
+            request: cloudscheduler.UpdateJobRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> gcs_job.Job:
             r"""Call the update job method over HTTP.
 
             Args:
@@ -1022,11 +1135,12 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
 
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'patch',
-                'uri': '/v1beta1/{job.name=projects/*/locations/*/jobs/*}',
-                'body': 'job',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "patch",
+                    "uri": "/v1beta1/{job.name=projects/*/locations/*/jobs/*}",
+                    "body": "job",
+                },
             ]
             request, metadata = self._interceptor.pre_update_job(request, metadata)
             pb_request = cloudscheduler.UpdateJobRequest.pb(request)
@@ -1035,33 +1149,35 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
             # Jsonify the request body
 
             body = json_format.MessageToJson(
-                transcoded_request['body'],
-                including_default_value_fields=False,
-                use_integers_for_enums=True
-            )
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
-
-            # Jsonify the query params
-            query_params = json.loads(json_format.MessageToJson(
-                transcoded_request['query_params'],
+                transcoded_request["body"],
                 including_default_value_fields=False,
                 use_integers_for_enums=True,
-            ))
+            )
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
+
+            # Jsonify the query params
+            query_params = json.loads(
+                json_format.MessageToJson(
+                    transcoded_request["query_params"],
+                    including_default_value_fields=False,
+                    use_integers_for_enums=True,
+                )
+            )
             query_params.update(self._get_unset_required_fields(query_params))
 
             query_params["$alt"] = "json;enum-encoding=int"
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
                 timeout=timeout,
                 headers=headers,
                 params=rest_helpers.flatten_query_params(query_params, strict=True),
                 data=body,
-                )
+            )
 
             # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
             # subclass.
@@ -1077,80 +1193,70 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
             return resp
 
     @property
-    def create_job(self) -> Callable[
-            [cloudscheduler.CreateJobRequest],
-            gcs_job.Job]:
+    def create_job(self) -> Callable[[cloudscheduler.CreateJobRequest], gcs_job.Job]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._CreateJob(self._session, self._host, self._interceptor) # type: ignore
+        return self._CreateJob(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def delete_job(self) -> Callable[
-            [cloudscheduler.DeleteJobRequest],
-            empty_pb2.Empty]:
+    def delete_job(
+        self,
+    ) -> Callable[[cloudscheduler.DeleteJobRequest], empty_pb2.Empty]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._DeleteJob(self._session, self._host, self._interceptor) # type: ignore
+        return self._DeleteJob(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def get_job(self) -> Callable[
-            [cloudscheduler.GetJobRequest],
-            job.Job]:
+    def get_job(self) -> Callable[[cloudscheduler.GetJobRequest], job.Job]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._GetJob(self._session, self._host, self._interceptor) # type: ignore
+        return self._GetJob(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def list_jobs(self) -> Callable[
-            [cloudscheduler.ListJobsRequest],
-            cloudscheduler.ListJobsResponse]:
+    def list_jobs(
+        self,
+    ) -> Callable[[cloudscheduler.ListJobsRequest], cloudscheduler.ListJobsResponse]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._ListJobs(self._session, self._host, self._interceptor) # type: ignore
+        return self._ListJobs(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def pause_job(self) -> Callable[
-            [cloudscheduler.PauseJobRequest],
-            job.Job]:
+    def pause_job(self) -> Callable[[cloudscheduler.PauseJobRequest], job.Job]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._PauseJob(self._session, self._host, self._interceptor) # type: ignore
+        return self._PauseJob(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def resume_job(self) -> Callable[
-            [cloudscheduler.ResumeJobRequest],
-            job.Job]:
+    def resume_job(self) -> Callable[[cloudscheduler.ResumeJobRequest], job.Job]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._ResumeJob(self._session, self._host, self._interceptor) # type: ignore
+        return self._ResumeJob(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def run_job(self) -> Callable[
-            [cloudscheduler.RunJobRequest],
-            job.Job]:
+    def run_job(self) -> Callable[[cloudscheduler.RunJobRequest], job.Job]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._RunJob(self._session, self._host, self._interceptor) # type: ignore
+        return self._RunJob(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
-    def update_job(self) -> Callable[
-            [cloudscheduler.UpdateJobRequest],
-            gcs_job.Job]:
+    def update_job(self) -> Callable[[cloudscheduler.UpdateJobRequest], gcs_job.Job]:
         # The return type is fine, but mypy isn't sophisticated enough to determine what's going on here.
         # In C++ this would require a dynamic_cast
-        return self._UpdateJob(self._session, self._host, self._interceptor) # type: ignore
+        return self._UpdateJob(self._session, self._host, self._interceptor)  # type: ignore
 
     @property
     def get_location(self):
-        return self._GetLocation(self._session, self._host, self._interceptor) # type: ignore
+        return self._GetLocation(self._session, self._host, self._interceptor)  # type: ignore
 
     class _GetLocation(CloudSchedulerRestStub):
-        def __call__(self,
-            request: locations_pb2.GetLocationRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: Optional[float]=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> locations_pb2.Location:
+        def __call__(
+            self,
+            request: locations_pb2.GetLocationRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> locations_pb2.Location:
 
             r"""Call the get location method over HTTP.
 
@@ -1167,26 +1273,26 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
                 locations_pb2.Location: Response from GetLocation method.
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1beta1/{name=projects/*/locations/*}',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1beta1/{name=projects/*/locations/*}",
+                },
             ]
 
             request, metadata = self._interceptor.pre_get_location(request, metadata)
             request_kwargs = json_format.MessageToDict(request)
-            transcoded_request = path_template.transcode(
-                http_options, **request_kwargs)
+            transcoded_request = path_template.transcode(http_options, **request_kwargs)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json.dumps(transcoded_request['query_params']))
+            query_params = json.loads(json.dumps(transcoded_request["query_params"]))
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
 
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
@@ -1207,15 +1313,17 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
 
     @property
     def list_locations(self):
-        return self._ListLocations(self._session, self._host, self._interceptor) # type: ignore
+        return self._ListLocations(self._session, self._host, self._interceptor)  # type: ignore
 
     class _ListLocations(CloudSchedulerRestStub):
-        def __call__(self,
-            request: locations_pb2.ListLocationsRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: Optional[float]=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> locations_pb2.ListLocationsResponse:
+        def __call__(
+            self,
+            request: locations_pb2.ListLocationsRequest,
+            *,
+            retry: OptionalRetry = gapic_v1.method.DEFAULT,
+            timeout: Optional[float] = None,
+            metadata: Sequence[Tuple[str, str]] = (),
+        ) -> locations_pb2.ListLocationsResponse:
 
             r"""Call the list locations method over HTTP.
 
@@ -1232,26 +1340,26 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
                 locations_pb2.ListLocationsResponse: Response from ListLocations method.
             """
 
-            http_options: List[Dict[str, str]] = [{
-                'method': 'get',
-                'uri': '/v1beta1/{name=projects/*}/locations',
-            },
+            http_options: List[Dict[str, str]] = [
+                {
+                    "method": "get",
+                    "uri": "/v1beta1/{name=projects/*}/locations",
+                },
             ]
 
             request, metadata = self._interceptor.pre_list_locations(request, metadata)
             request_kwargs = json_format.MessageToDict(request)
-            transcoded_request = path_template.transcode(
-                http_options, **request_kwargs)
+            transcoded_request = path_template.transcode(http_options, **request_kwargs)
 
-            uri = transcoded_request['uri']
-            method = transcoded_request['method']
+            uri = transcoded_request["uri"]
+            method = transcoded_request["method"]
 
             # Jsonify the query params
-            query_params = json.loads(json.dumps(transcoded_request['query_params']))
+            query_params = json.loads(json.dumps(transcoded_request["query_params"]))
 
             # Send the request
             headers = dict(metadata)
-            headers['Content-Type'] = 'application/json'
+            headers["Content-Type"] = "application/json"
 
             response = getattr(self._session, method)(
                 "{host}{uri}".format(host=self._host, uri=uri),
@@ -1278,6 +1386,4 @@ class CloudSchedulerRestTransport(CloudSchedulerTransport):
         self._session.close()
 
 
-__all__=(
-    'CloudSchedulerRestTransport',
-)
+__all__ = ("CloudSchedulerRestTransport",)
